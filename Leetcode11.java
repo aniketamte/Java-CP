@@ -13,8 +13,31 @@ public class Leetcode11 {
             }
             return maxWater;
       }
+
+      //optimal Approach ------> Two Pointer Approach
+
+      public static int maxArea2(int height[]){  //O(n)
+            int maxWater = 0;
+            int lp = 0;
+            int rp = height.length-1;
+            while(lp<rp){
+                  int w = rp -lp;
+                  int ht = Math.min(height[lp], height[rp]);
+                  int currWater = w * ht;
+                  maxWater = Math.max(maxWater, currWater);
+
+                  if(height[lp] < height[rp]){
+                        lp++;
+                  } else{
+                        rp--;
+                  }
+            }
+            return maxWater;
+      }
+
       public static void main(String[] args) {
             int height[] = {1, 8, 6, 2, 5, 4, 8, 3, 7};
             System.out.println(maxArea(height));
+            System.out.println(maxArea2(height));
       }
 }
