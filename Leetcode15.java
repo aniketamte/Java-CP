@@ -1,13 +1,10 @@
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Leetcode15 {
 
     public static List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
-        List<List<Integer>> op = new ArrayList<>();
+        List<List<Integer>> ans = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
@@ -17,7 +14,7 @@ public class Leetcode15 {
             while (left < right) {
                 int current_sum = nums[left] + nums[right];
                 if (current_sum == target) {
-                    op.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    ans.add(Arrays.asList(nums[i], nums[left], nums[right]));
                     while (left < right && nums[left] == nums[left + 1]) {
                         left++;
                     }
@@ -33,7 +30,10 @@ public class Leetcode15 {
                 }
             }
         }
-        return op;
+
+        
+
+        return ans;
       }
     
 
