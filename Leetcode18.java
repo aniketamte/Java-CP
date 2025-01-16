@@ -17,7 +17,10 @@ public class Leetcode18 {
                         int ri = n-1;
 
                         while (li < ri) {
-                          int sum = nums[i] + nums[j] + nums[li] + nums[ri];
+                          long sum = nums[i];
+                          sum += nums[j];
+                          sum += nums[li];
+                          sum += nums[ri];
 
                           if (sum < target) {
                               li++;
