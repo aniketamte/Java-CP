@@ -1,5 +1,6 @@
 public class GFG01 {
       //GFG160 Challenge Day ----> 1
+      //Find second Largest Element
       public static int getSecondLargest(int[] arr) {
         if (arr == null || arr.length < 2) {    //because we cant find ans
             return -1;
