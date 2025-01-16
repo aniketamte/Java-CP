@@ -2,37 +2,30 @@
 public class Leetcode75 {
 
     public static void sortColor(int nums[]) {
-        int n = nums.length;
-        int count0 = 0;
-        int count1 = 0;
-        int count2 = 0;
+        int l = 0;
+        int r = nums.length - 1;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i <= r;) {
             if (nums[i] == 0) {
-                count0++;
-            } else if (nums[i] == 1) {
-                count1++;
-            } else {
-                count2++;
+                swap(nums, i++, l++); 
+            }else if (nums[i] == 1) {
+                ++i; 
+            }else {
+                swap(nums, i, r--);
             }
-        }
-
-        //override on element
-        int idx = 0;
-        for (int i = 0; i < count0; i++) {
-            nums[idx++] = 0;
-        }
-        for (int i = 0; i < count1; i++) {
-            nums[idx++] = 1;
-        }
-        for (int i = 0; i < count2; i++) {
-            nums[idx++] = 2;
         }
     }
 
+    private static void swap(int[] nums, int i, int j) {
+        final int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
     public static void main(String[] args) {
-      int nums[] = {2, 0, 2, 1, 1, 0};
-      //output = [0,0,1,1,2,2]
-      System.out.println(sortColor(nums));
+        int nums[] = {2, 0, 2, 1, 1, 0};
+        //output = [0,0,1,1,2,2]
+        int ans = sortColor(nums);
+        System.out.println(ans);
     }
 }
