@@ -1,7 +1,7 @@
 
 public class GFG02 {
     //GFG160 Challenge Day ----> 2
-    //Day 02 ----> Move all zeros to end
+    //Day 02 ---> Move all zeros to end
 
     public static void moveZeroes(int[] nums) {
         int i = 0;
