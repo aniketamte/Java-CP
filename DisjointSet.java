@@ -1,4 +1,5 @@
 public class DisjointSet{
+      //Time Complexity ----> For Union ----> O(1)
       static int n = 7;
       static int par[] = new int[n];
       static int rank[] = new int[n];
