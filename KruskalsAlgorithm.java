@@ -64,11 +64,11 @@ public class KruskalsAlgorithm {
     public static void kruskalsMST(ArrayList<Edge> edges, int V){
       init();
       //Sort in ascending order
-      Collections.sort(edges);
+      Collections.sort(edges);   //O(ElovE)
       int mstCount = 0;
       int count =0;
 
-      for(int i=0; count<V-1; i++){
+      for(int i=0; count<V-1; i++){  //O(V)
             Edge e = edges.get(i);
 
             int parA = find(e.src);
