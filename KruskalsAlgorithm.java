@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class KruskalsAlgorithm {
 
@@ -60,11 +61,31 @@ public class KruskalsAlgorithm {
             par[parB] = parA;
         }
     }
+    public static void kruskalsMST(ArrayList<Edge> edges, int V){
+      init();
+      //Sort in ascending order
+      Collections.sort(edges);
+      int mstCount = 0;
+      int count =0;
+
+      for(int i=0; count<V-1; i++){
+            Edge e = edges.get(i);
+
+            int parA = find(e.src);
+            int parB = find(e.dest);
+            if(parA != parB){
+                  union(e.src, e.dest);
+                  mstCount += e.wt;
+                  count++;
+            }
+      }
+      System.out.println(mstCount);
+    }
+
     public static void main(String[] args) {
         int V = 4;
-        ArrayList<Edge> edges = new ArrayList<>
-        ();
+        ArrayList<Edge> edges = new ArrayList<>();
         createGraph(edges);
-
+        kruskalsMST(edges, V);
     }
 }
