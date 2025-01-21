@@ -29,7 +29,7 @@ public class KruskalsAlgorithm {
         edges.add(new Edge(1, 3, 40));
         edges.add(new Edge(2, 3, 50));
     }
-    static int n = 7;
+    static int n = 4;
     static int par[] = new int[n];
     static int rank[] = new int[n];
 
@@ -37,6 +37,27 @@ public class KruskalsAlgorithm {
         //Start each element is parent for self
         for (int i = 0; i < n; i++) {
             par[i] = i;
+        }
+    }
+
+    public static int find(int x) {
+        if (x == par[x]) {
+            return x;
+        }
+        return par[x] = find(par[x]);
+    }
+
+    public static void union(int a, int b) {
+        int parA = find(a);
+        int parB = find(b);
+
+        if (rank[parA] == rank[parB]) {
+            par[parB] = parA;
+            rank[parA]++;
+        } else if (rank[parA] < rank[parB]) {
+            par[parA] = parB;
+        } else {
+            par[parB] = parA;
         }
     }
 }
