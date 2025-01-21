@@ -60,4 +60,11 @@ public class KruskalsAlgorithm {
             par[parB] = parA;
         }
     }
+    public static void main(String[] args) {
+        int V = 4;
+        ArrayList<Edge> edges = new ArrayList<>
+        ();
+        createGraph(edges);
+
+    }
 }
