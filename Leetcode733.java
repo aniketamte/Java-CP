@@ -1,6 +1,6 @@
 
 public class Leetcode733 {
-     public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
+     public static int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
         int color = image[sr][sc];
         if (color != newColor) {
             helper(image, sr, sc, color, newColor);
@@ -8,7 +8,7 @@ public class Leetcode733 {
         return image;
     }
 
-    public void helper(int[][] image, int r, int c, int color, int newColor) {
+    public static void helper(int[][] image, int r, int c, int color, int newColor) {
         if (image[r][c] == color) {
             image[r][c] = newColor;
             if (r >= 1) {
@@ -31,5 +31,7 @@ public class Leetcode733 {
             {1,1,0},
             {1,0,1}
       };
+      int ans[][] = floodFill(image, 1, 1, 2);
+      System.out.println(ans);
     }
 }
