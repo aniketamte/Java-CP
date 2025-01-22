@@ -1,26 +1,35 @@
 
 public class Leetcode733 {
-      public void helper(int[][] image, int sr, int sc, int color, boolean vis[][], int orgCol) {
-            if(sr<0 || sc<0 || sr>=image.length || sc>=image[0].length || vis[sr][sc] || image[sr][sc] == color){
-                  return;
+     public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
+        int color = image[sr][sc];
+        if (color != newColor) {
+            helper(image, sr, sc, color, newColor);
+        }
+        return image;
+    }
+
+    public void helper(int[][] image, int r, int c, int color, int newColor) {
+        if (image[r][c] == color) {
+            image[r][c] = newColor;
+            if (r >= 1) {
+                helper(image, r - 1, c, color, newColor);
             }
-            //Left
-            helper(image, sr, sc-1, color, vis, orgCol);
-            //Right
-            helper(image, sr, sc+1, color, vis, orgCol);
-            //Up
-            helper(image, sr-1, sc, color, vis, orgCol);
-            //Down
-            helper(image, sr+1, sc, color, vis, orgCol);
+            if (c >= 1) {
+                helper(image, r, c - 1, color, newColor);
+            }
+            if (r + 1 < image.length) {
+                helper(image, r + 1, c, color, newColor);
+            }
+            if (c + 1 < image[0].length) {
+                helper(image, r, c + 1, color, newColor);
+            }
+        }
     }
-
-    public int[][] floodFill(int[][] image, int sr, int sc, int color) {
-      boolean vis[][] = new boolean[image.length][image[0].length];
-      helper(image, sr, sc, color, vis, image[sr][sc]);
-      return image;
-    }
-
     public static void main(String[] args) {
-      
+      int image[][] = {
+            {1,1,1},
+            {1,1,0},
+            {1,0,1}
+      };
     }
 }
