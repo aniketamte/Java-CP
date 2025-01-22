@@ -1,6 +1,9 @@
 
 public class Leetcode733 {
-      public int[][] helper(int[][] image, int sr, int sc, int color, boolean vis[][], int orgCol) {
+      public void helper(int[][] image, int sr, int sc, int color, boolean vis[][], int orgCol) {
+            if(sr<0 || sc<0 || sr>=image.length || sc>=image[0].length || vis[sr][sc] || image[sr][sc] == color){
+                  return;
+            }
             //Left
             helper(image, sr, sc-1, color, vis, orgCol);
             //Right
@@ -18,6 +21,6 @@ public class Leetcode733 {
     }
 
     public static void main(String[] args) {
-
+      
     }
 }
