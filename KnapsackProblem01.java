@@ -12,6 +12,9 @@ public class KnapsackProblem01 {
               //exlude
               int ans2 = knapsanck(val, wt, W, n - 1);
               return Math.max(ans1, ans2);
+          } else {
+              //Not valid Condition
+              return knapsanck(val, wt, W, n - 1);
           }
       }
       public static void main(String[] args) {
