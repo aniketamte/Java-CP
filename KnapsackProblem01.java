@@ -4,6 +4,15 @@ public class KnapsackProblem01 {
           if (W == 0 || n == 0) {
               return 0;
           }
+          if (wt[n - 1] <= W) {  //Valid condition
+              //include
+
+              int ans1 = val[n - 1] + knapsanck(val, wt, W - wt[n - 1], n - 1);
+
+              //exlude
+              int ans2 = knapsanck(val, wt, W, n - 1);
+              return Math.max(ans1, ans2);
+          }
       }
       public static void main(String[] args) {
         int val[] = {15, 14, 10, 45, 30};
