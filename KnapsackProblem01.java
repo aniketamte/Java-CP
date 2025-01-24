@@ -77,6 +77,9 @@ public class KnapsackProblem01 {
          print(dp);
          return dp[n][W];
      }
+     public static void print(int dp[][]){
+        
+     }
 
     public static void main(String[] args) {
         int val[] = {15, 14, 10, 45, 30};
