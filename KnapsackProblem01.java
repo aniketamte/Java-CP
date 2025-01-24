@@ -58,6 +58,22 @@ public class KnapsackProblem01 {
              //for 0th row
              dp[0][j] = 0;
          }
+         for (int i = 1; i < n + 1; i++) {
+             for (int j = 1; j < W + 1; j++) {
+                 int v = val[i - 1]; //ith item val
+                 int w = wt[i - 1];  //ith item wait
+                 if (w <= j) {
+                     //for valid condition
+                     int incProfit = v + dp[i - 1][j - w];
+                     int excProfit = dp[i - 1][j];
+                     dp[i][j] = Math.max(incProfit, excProfit);
+                 } else {
+                     //invalid condition
+                     int excProfit = dp[i - 1][j];
+                     dp[i][j] = excProfit;
+                 }
+             }
+         }
      }
 
     public static void main(String[] args) {
