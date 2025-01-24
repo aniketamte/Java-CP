@@ -102,5 +102,6 @@ public class KnapsackProblem01 {
         }
         System.out.println(knapsanck(val, wt, W, val.length));
         System.out.println(knapsanckMemorization(val, wt, W, val.length, dp));
+        System.out.println(knapsackTab(val, wt, W));
     }
 }
