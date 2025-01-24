@@ -74,6 +74,8 @@ public class KnapsackProblem01 {
                  }
              }
          }
+         print(dp);
+         return dp[n][W];
      }
 
     public static void main(String[] args) {
