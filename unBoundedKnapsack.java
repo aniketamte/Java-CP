@@ -1,4 +1,7 @@
 public class unBoundedKnapsack {
+      public static int unboundedKnap(int val[], int wt[], int W){
+            
+      }
       public static void print(int dp[][]) {
         for (int i = 0; i < dp.length; i++) {
             for (int j = 0; j < dp[0].length; j++) {
