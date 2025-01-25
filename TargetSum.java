@@ -21,6 +21,8 @@ public class TargetSum {
                 }
             }
         }
+        print(dp);
+        return dp[n][sum];
     }
 
       public static void print(boolean dp[][]) {
