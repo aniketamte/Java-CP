@@ -1,6 +1,16 @@
 public class unBoundedKnapsack {
       public static int unboundedKnap(int val[], int wt[], int W){
-            
+            int n = val.length;
+          int dp[][] = new int[n + 1][W + 1];
+
+          for (int i = 0; i < dp.length; i++) {
+              //for 0th column
+              dp[i][0] = 0;
+          }
+          for (int j = 0; j < dp[0].length; j++) {
+              //for 0th row
+              dp[0][j] = 0;
+          }
       }
       public static void print(int dp[][]) {
         for (int i = 0; i < dp.length; i++) {
