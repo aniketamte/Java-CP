@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class contest434Q2 {
-      public class UserMentions{
+      public static int[] calculateMentions(int numberOfUsers, List<List<String>> events){
 
       }
       public static void main(String[] args){
