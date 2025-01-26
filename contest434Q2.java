@@ -1,11 +1,20 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.TreeMap;
 
 public class contest434Q2 {
       public static int[] calculateMentions(int numberOfUsers, List<List<String>> events){
             int[] mentions = new int[numberOfUsers];
           boolean[] isOnline = new boolean[numberOfUsers];
           Arrays.fill(isOnline, true);
+
+           TreeMap<Integer, List<List<String>>> eventMap = new TreeMap<>();
+        for (List<String> event : events) {
+            int timestamp = Integer.parseInt(event.get(1));
+            eventMap.putIfAbsent(timestamp, new ArrayList<>());
+            eventMap.get(timestamp).add(event);
+        }
       }
       public static void main(String[] args){
             // Example 1
