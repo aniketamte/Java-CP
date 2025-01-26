@@ -1,5 +1,5 @@
 
-public class contest1 {
+public class contest434 {
     //weekly contest 434 ====> Q1
     //Count Partitions with Even Sum Difference
 
