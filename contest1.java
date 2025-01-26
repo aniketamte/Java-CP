@@ -4,7 +4,29 @@ public class contest1 {
     //Count Partitions with Even Sum Difference
 
     public static int countEvenSumDifferencePartitions(int[] nums) {
+        int n = nums.length;
 
+        // Calculate the total sum of the array
+        int totalSum = 0;
+        for (int num : nums) {
+            totalSum += num;
+        }
+
+        int leftSum = 0;
+        int count = 0;
+
+        // Iterate through the array to calculate partitions
+        for (int i = 0; i < n - 1; i++) {
+            leftSum += nums[i];
+            int rightSum = totalSum - leftSum;
+
+            // Check if the difference between leftSum and rightSum is even
+            if ((leftSum - rightSum) % 2 == 0) {
+                count++;
+            }
+        }
+
+        return count;
     }
 
     public static void main(String[] args) {
