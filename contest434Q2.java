@@ -3,7 +3,9 @@ import java.util.List;
 
 public class contest434Q2 {
       public static int[] calculateMentions(int numberOfUsers, List<List<String>> events){
-
+            int[] mentions = new int[numberOfUsers];
+          boolean[] isOnline = new boolean[numberOfUsers];
+          Arrays.fill(isOnline, true);
       }
       public static void main(String[] args){
             // Example 1
