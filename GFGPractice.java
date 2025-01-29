@@ -1,4 +1,5 @@
 public class GFGPractice {
+      //Unbounded Knapsack
       static int knapSack(int val[], int wt[], int capacity) {
         // code here
         int n = val.length;
@@ -32,7 +33,7 @@ public class GFGPractice {
     public static void main(String[] args) {
         int val[] = {15, 14, 10, 45, 30};
         int wt[] = {2, 5, 1, 3, 4};
-        int W = 7;
-        System.out.println(knapSack(val, wt, W));
+        int capacity = 7;
+        System.out.println(knapSack(val, wt, capacity));
     }
 }
