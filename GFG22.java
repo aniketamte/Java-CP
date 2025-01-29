@@ -14,5 +14,8 @@ public class GFG22 {
         }
         return idx;
     }
-
+    public static void main(String[] args) {
+        int citations[] = {3, 0, 5, 3, 0};
+        System.out.println(hIndex(citations));
+    }
 }
