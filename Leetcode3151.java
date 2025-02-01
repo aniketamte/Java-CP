@@ -1,4 +1,5 @@
 public class Leetcode3151 {
+      //Problem Of the Day ---> 01/02/2025
       //3151. Special Array I
       public static boolean isArraySpecial(int[] nums){
             for(int i=0; i<nums.length-1; i++){
