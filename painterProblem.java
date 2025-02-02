@@ -1,4 +1,6 @@
 public class painterProblem {
+      //Painter's Partition Problem 
+      //Solve using Binary Search
       public static boolean isPossible(int arr[], int n, int m, int maxAllowedTime){   //O(n)
             int painters =1, time =0;
 
