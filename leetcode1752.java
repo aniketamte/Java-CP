@@ -1,5 +1,6 @@
 
 public class leetcode1752 {
+      //Problem OF The Day ---> 02/02/2025
 
     public static boolean check(int[] nums) {
         int spike = 0;
