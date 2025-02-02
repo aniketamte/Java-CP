@@ -3,6 +3,8 @@ import java.util.Arrays;
 
 public class AgressiveCows {
 
+      //Aggressive Cows Problem 
+
     public static boolean isPossible(int arr[], int N, int C, int minAllowedDist) { //O(N)
         int cows = 1, lastStallPos = arr[0];
 
