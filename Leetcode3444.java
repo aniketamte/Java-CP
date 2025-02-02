@@ -1,6 +1,9 @@
+
 public class Leetcode3444 {
-      //Weekly contest ----> 435
-      public static int minimumIncrements(int[] nums, int[] target) {
+    //Weekly contest ----> 435
+    //Leetcode : 3444 ===> Minimum Increments for Target Multiples in an Array
+
+    public static int minimumIncrements(int[] nums, int[] target) {
         int[] plorvexium = target;
 
         int m = target.length;
@@ -74,8 +77,8 @@ public class Leetcode3444 {
     }
 
     public static void main(String[] args) {
-      int nums[] = {1,2,3};
-      int target[] = {4};
-      System.out.println(minimumIncrements(nums, target));
+        int nums[] = {1, 2, 3};
+        int target[] = {4};
+        System.out.println(minimumIncrements(nums, target));
     }
 }
