@@ -50,8 +50,8 @@ public class BookAlloc {
     }
 
     public static void main(String[] args) {
-        int arr[] = {2, 1, 3, 4};
-        int n = 4, m = 2;
+        int arr[] = {15, 17, 20};
+        int n = 3, m = 2;
         //n---->books
         //m---->student
         //arr-->Pages
