@@ -1,5 +1,7 @@
 
 public class BookAlloc {
+    //Book Allocation or Allocate Books Problem
+    //Solve using Binary Search
 
     public static boolean isValid(int arr[], int n, int m, int maxAllowedPages) {
         int student = 1, pages = 0;
