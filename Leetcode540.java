@@ -1,4 +1,5 @@
 public class Leetcode540 {
+      //Leetcode : 540 ---> Single Element in a Sorted Array
       public static int singleNonDuplicate(int[] nums){
             int start =0;
             int end = nums.length-1;
