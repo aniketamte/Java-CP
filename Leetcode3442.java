@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Leetcode3442 {
-
+      //Weekly contest ----> 435
+      
       //Leetcode : 3442 --> Maximum Difference Between Even and Odd Frequency I
 
     public static int maxDifference(String s) {
