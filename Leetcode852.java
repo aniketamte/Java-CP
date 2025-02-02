@@ -1,5 +1,7 @@
 public class Leetcode852{
-      public static int peakIndexInMountainArray(int arr[]){
+      //Leetcode : 852 ===>Peak Index in a Mountain Array
+      //Solve Using Binary Search
+       public static int peakIndexInMountainArray(int arr[]){
             int start = 0;
             int end = arr.length-1;
             while(start<end){
