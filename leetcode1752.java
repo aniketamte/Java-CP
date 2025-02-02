@@ -1,8 +1,8 @@
 
 public class leetcode1752 {
       //Problem OF The Day ---> 02/02/2025
-
-    public static boolean check(int[] nums) {
+      //Leetcode : 1752 ---> Check if Array Is Sorted and Rotated
+       public static boolean check(int[] nums) {
         int spike = 0;
         for (int i = 0; i < nums.length - 1; i++) {
             if (nums[i] > nums[i + 1]) {
