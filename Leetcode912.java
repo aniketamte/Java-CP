@@ -1,6 +1,6 @@
 
 public class Leetcode912 {
-
+      //Sort An Array
     public static int[] sortArray(int[] nums) {
         mergeSort(nums, 0, nums.length - 1);
         return nums;
