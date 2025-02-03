@@ -1,6 +1,8 @@
 
 public class Leetcode3105 {
 
+      //Longest Strictly Increasing or Strictly Decreasing Subarray
+
     public static int longestMonotonicSubarray(int[] nums) {
         int maxLength = 0;
 
