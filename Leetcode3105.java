@@ -2,6 +2,7 @@
 public class Leetcode3105 {
 
       //Longest Strictly Increasing or Strictly Decreasing Subarray
+      //POTD ----> 03/02/2025
 
     public static int longestMonotonicSubarray(int[] nums) {
         int maxLength = 0;
