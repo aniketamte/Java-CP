@@ -6,10 +6,12 @@ public class insertionSort {
             int current = arr[i];
             int previous = i - 1;
 
+            //Finding out the correct pos to insert
             while (previous >= 0 && arr[previous] > current) {
                 arr[previous + 1] = arr[previous];
                 previous--;
             }
+            //insertion
             arr[previous + 1] = current;
         }
     }
