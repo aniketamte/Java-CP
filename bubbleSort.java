@@ -1,7 +1,9 @@
 public class bubbleSort{
+      //Bubble Sort Technique
       public static void bubbleSorting(int arr[]){
             for(int turn =0; turn<arr.length-1; turn++){
                   for(int j=0; j<arr.length-1-turn; j++){
+                        //Swapping
                         if(arr[j] > arr[j+1]){
                               int temp = arr[j];
                               arr[j] = arr[j+1];
@@ -11,6 +13,7 @@ public class bubbleSort{
             }
       }
 
+      //print arr 
       public static void printArr(int arr[]){
             for(int i=0; i<arr.length; i++){
                   System.out.print(arr[i] + " ");
