@@ -1,5 +1,6 @@
 
 public class Leetcode1800 {
+      //POTD ====> Leetcode : 1800 ====> 04/02/2025
       //Maximum Ascending Subarray Sum
 
     public static int maxAscendingSum(int[] nums) {
