@@ -1,6 +1,12 @@
+
 import java.util.*;
+
 public class Leetcode1790 {
-      public static boolean areAlmostEqual(String s1, String s2) {
+
+      //Check if One String Swap Can Make Strings Equal
+      
+
+        public static boolean areAlmostEqual(String s1, String s2) {
         if (s1.equals(s2)) {
             return true;
         }
@@ -30,8 +36,8 @@ public class Leetcode1790 {
     }
 
     public static void main(String[] args) {
-      String s1 = "bank";
-      String s2 = "kanb";
-      System.out.println(areAlmostEqual(s1, s2));
+        String s1 = "bank";
+        String s2 = "kanb";
+        System.out.println(areAlmostEqual(s1, s2));
     }
 }
