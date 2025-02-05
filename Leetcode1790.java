@@ -4,7 +4,7 @@ import java.util.*;
 public class Leetcode1790 {
 
       //Check if One String Swap Can Make Strings Equal
-      
+      //POTD ====> 05-02-2025
 
         public static boolean areAlmostEqual(String s1, String s2) {
         if (s1.equals(s2)) {
