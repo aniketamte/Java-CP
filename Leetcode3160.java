@@ -5,6 +5,8 @@ public class Leetcode3160 {
 
       //Find the Number of Distinct Colors Among the Balls
 
+      //POTD ---> 07/02/2025
+
     public static int[] queryResults(int limit, int[][] queries) {
         Map<Integer, Integer> node = new HashMap<>();
         Map<Integer, Integer> color = new HashMap<>();
