@@ -1,4 +1,6 @@
 public class peakElement{
+      //Interview Bit Question
+      //Find a peak element
       public static int solve(int[] A) {
         int l = 0;
         int r = A.length - 1;
