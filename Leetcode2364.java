@@ -4,6 +4,8 @@ import java.util.Map;
 
 public class Leetcode2364 {
 
+      //Count Number of Bad Pairs
+
     public static long countBadPairs(int[] nums) {
         long badPairs = 0;
         Map<Integer, Integer> diffCount = new HashMap<>();
