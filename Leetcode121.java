@@ -1,5 +1,7 @@
-import java.util.*;
 public class Leetcode121 {
+
+  //Stock Buy and Sell
+  //Striver SDE sheet
 
     public static int maxProfit(int[] prices) {
       int maxProfit = 0;
