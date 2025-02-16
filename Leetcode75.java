@@ -25,7 +25,12 @@ public class Leetcode75 {
     public static void main(String[] args) {
         int nums[] = {2, 0, 2, 1, 1, 0};
         //output = [0,0,1,1,2,2]
-        int ans = sortColor(nums);
-        System.out.println(ans);
+        sortColor(nums);
+
+        // Print sorted array
+        System.out.print("Sorted Array: ");
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
     }
 }
