@@ -1,6 +1,9 @@
 
 public class Leetcode53 {
 
+    //kedanes Algorithm
+    //Maximum Subarray sum
+
     public static int maxSubArray(int[] nums) {
         int sum = 0;
         int maxSum = nums[0];
