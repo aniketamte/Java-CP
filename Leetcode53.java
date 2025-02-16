@@ -20,8 +20,16 @@ public class Leetcode53 {
         return maxSum;
     }
 
+    public static void printArr(int nums[]){
+        for(int i=0; i<nums.length; i++){
+            System.out.print(nums[i] + " ");
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         int nums[] = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         System.out.println(maxSubArray(nums));
+        printArr(nums);
     }
 }
