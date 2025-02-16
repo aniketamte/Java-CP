@@ -2,6 +2,7 @@ public class Leetcode121 {
 
   //Stock Buy and Sell
   //Striver SDE sheet
+  //Time Complexity ----> O(n)
 
     public static int maxProfit(int[] prices) {
       int maxProfit = 0;
