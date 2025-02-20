@@ -1,5 +1,7 @@
 import java.util.*;
 public class Leetcode1{
+      //Two Sum
+      //29-02-2025
       public static int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> hm = new HashMap<Integer,Integer>();
         for(int i=0; i<nums.length; i++){
