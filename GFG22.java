@@ -1,5 +1,6 @@
 
 import java.util.Arrays;
+//Medium Level
 
 public class GFG22 {
 
