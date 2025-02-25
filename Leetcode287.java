@@ -1,5 +1,6 @@
 
 public class Leetcode287 {
+    //Leetcode 287 : Find the Duplicate Number
 
     public static int findDuplicate(int[] nums) {
         int slow = nums[0];
