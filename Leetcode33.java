@@ -11,12 +11,14 @@ public class Leetcode33 {
                         return mid;
                   }
                   if(nums[st]<=nums[mid]){
+                        //Left
                         if(nums[st]<=target && target<=nums[mid]){
                               end=mid-1;
                         } else{
                               st=mid+1;
                         }
                   } else{
+                        //Right
                         if(nums[mid]<=target && target<=nums[end]){
                               st=mid+1;
                         } else{
