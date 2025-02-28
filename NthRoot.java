@@ -1,5 +1,9 @@
+
 public class NthRoot {
-      public static int func(int mid, int n, int m) {
+    //The N-th root of an integer
+    //28-02-2025
+
+    public static int func(int mid, int n, int m) {
         long ans = 1;
         for (int i = 1; i <= n; i++) {
             ans = ans * mid;
@@ -29,9 +33,10 @@ public class NthRoot {
         }
         return -1;
     }
+
     public static void main(String[] args) {
-      int n = 3;
-      int m = 27;
-      System.out.println(NthRoot(n,m));
+        int n = 3;
+        int m = 27;
+        System.out.println(NthRoot(n, m));
     }
 }
