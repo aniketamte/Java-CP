@@ -1,5 +1,9 @@
-public class Leetcode1092{
-      public static String shortestCommonSupersequence(String str1, String str2) {
+
+public class Leetcode1092 {
+    //Leetcode : 1092 ===> Shortest Common Supersequence
+    //28-02-2025
+
+    public static String shortestCommonSupersequence(String str1, String str2) {
         // Step 1: Find the longest common subsequence using dynamic programming
         int m = str1.length();
         int n = str2.length();
@@ -53,9 +57,10 @@ public class Leetcode1092{
         // Reverse the result to get the final supersequence
         return result.reverse().toString();
     }
+
     public static void main(String[] args) {
-      String str1 = "abac";
-      String str2 = "cab";
-      System.out.println("Shortest Common Supersequence: " + shortestCommonSupersequence(str1,str2));
+        String str1 = "abac";
+        String str2 = "cab";
+        System.out.println("Shortest Common Supersequence: " + shortestCommonSupersequence(str1, str2));
     }
 }
