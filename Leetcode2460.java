@@ -3,6 +3,10 @@ import java.util.*;
 
 public class Leetcode2460 {
 
+      //Leetcode : 2460 ===> Apply Operations to an Array
+      //https://leetcode.com/problems/apply-operations-to-an-array/
+      //01 - 03 - 2025
+
     public static int[] applyOperations(int[] nums) {
         int n = nums.length;
         int[] modifiedNums = new int[n];
