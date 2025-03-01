@@ -1,6 +1,9 @@
+
 import java.util.*;
-public class Leetcode2460{
-      public static int[] applyOperations(int[] nums) {
+
+public class Leetcode2460 {
+
+    public static int[] applyOperations(int[] nums) {
         int n = nums.length;
         int[] modifiedNums = new int[n];
         int zeroCount = 0;
@@ -29,8 +32,8 @@ public class Leetcode2460{
     }
 
     public static void main(String[] args) {
-      int nums[] = {1,2,2,1,1,0};
-      int result[] = applyOperations(nums);
-      System.out.println(Arrays.toString(result));
+        int nums[] = {1, 2, 2, 1, 1, 0};
+        int result[] = applyOperations(nums);
+        System.out.println(Arrays.toString(result));
     }
 }
