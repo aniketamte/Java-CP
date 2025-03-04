@@ -16,6 +16,15 @@ public class Leetcode237 {
         node.next = node.next.next;
     }
 
+    public static void printList(ListNode head) {
+        ListNode current = head;
+        while (current != null) {
+            System.out.print(current.val + " -> ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+
     public static void main(String[] args) {
         // Creating the linked list: 4 -> 5 -> 1 -> 9
         ListNode head = new ListNode(4);
