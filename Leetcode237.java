@@ -1,7 +1,7 @@
 
 public class Leetcode237 {
 
-    public class ListNode {
+    public static class ListNode {
 
         int val;
         ListNode next;
@@ -10,4 +10,10 @@ public class Leetcode237 {
             val = x;
         }
     }
+
+    public static void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
+    }
+    
 }
