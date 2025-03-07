@@ -7,7 +7,7 @@ public class Leetcode206 {
         //constructor
 
         public Node(int data) {
-            this.data = data;
+            this.data = data;L
             this.next = null;
         }
     }
