@@ -1,4 +1,5 @@
-
+//Leetcode 160 : Intersection of Two Linked Lists
+//07-03-2025
 class ListNode {
 
     int val;
@@ -9,8 +10,10 @@ class ListNode {
         next = null;
     }
 }
-public class Leetcode160{
-      public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+
+public class Leetcode160 {
+
+    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) {
             return null;
         }
