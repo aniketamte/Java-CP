@@ -16,7 +16,7 @@ public class LinkedList {
     public static Node head;
     public static Node tail;
 
-    //Add in Linked List
+    //Add Linked List in first
     public static void addFirst(int data) {
         //create new node
         Node newNode = new Node(data);
@@ -30,6 +30,22 @@ public class LinkedList {
         head = newNode;
     }
 
+    //Add last in linked list
+    public static void addLast(int data) {
+        //create newNode
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = tail = newNode;
+            return;
+        }
+        //tail.next---. newNode
+        tail.next = newNode;
+        //Assign tail
+        newNode = tail;
+    }
+
+    //Print LinkedList
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         // ll.head = new Node(1);
@@ -38,5 +54,8 @@ public class LinkedList {
         ll.addFirst(1);
         ll.addFirst(2);
         ll.addFirst(3);
+        ll.addLast(4);
+        ll.addLast(5);
+        ll.addLast(6);
     }
 }
