@@ -3,6 +3,10 @@ import java.util.*;
 
 public class SubsetSums {
 
+      //Sub set sum
+      //GFG practice Question
+      //08 -03-2025
+
     public void subsetSumsHelper(int arr[], int idx, ArrayList<Integer> result, int currSum) {
         if (idx == arr.length) {
             result.add(currSum);
