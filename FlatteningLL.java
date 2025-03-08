@@ -1,4 +1,7 @@
 public class FlatteningLL{
+
+      //GFG Practice : Flattening a Linked List
+      //08-03-2025
       class Node{
             int data;
             Node next;
