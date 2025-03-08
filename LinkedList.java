@@ -45,17 +45,35 @@ public class LinkedList {
     }
 
     //Print LinkedList
+    public void print() {
+      if(head == null){
+            System.out.println("LL is Empty");
+            return;
+      }
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " --> ");
+            temp = temp.next;
+        }
+        System.out.println("NULL");
+    }
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         // ll.head = new Node(1);
         // ll.head.next = new Node(2);
-
+        ll.print();
         ll.addFirst(1);
+        ll.print();
         ll.addFirst(2);
+        ll.print();
         ll.addFirst(3);
+        ll.print();
         ll.addLast(4);
+        ll.print();
         ll.addLast(5);
+        ll.print();
         ll.addLast(6);
+        ll.print();
     }
 }
