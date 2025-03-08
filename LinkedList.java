@@ -58,6 +58,22 @@ public class LinkedList {
         System.out.println("NULL");
     }
 
+    //Add in Middle of the LinkedList
+    public static void addMiddle(int idx, int data){
+       Node newNode = new Node(data);
+       Node temp = head;
+       int i = 0;
+
+       while(i < idx-1){
+            temp = temp.next;
+            i++;
+       }
+
+       //i=idx-1
+       newNode.next = temp.next;
+       temp.next = newNode;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         // ll.head = new Node(1);
@@ -74,6 +90,9 @@ public class LinkedList {
         ll.addLast(5);
         ll.print();
         ll.addLast(6);
+        ll.print();
+        System.out.println("Add in Middle of the LinkedList : ");
+        ll.addMiddle(2, 9);
         ll.print();
     }
 }
