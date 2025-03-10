@@ -1,41 +1,47 @@
+
 import java.util.ArrayList;
 import java.util.List;
 
- class TreeNode {
+class TreeNode {
 
-         int val;
-         TreeNode left;
-         TreeNode right;
+    int val;
+    TreeNode left;
+    TreeNode right;
 
-         TreeNode() {
+    TreeNode() {
     }
 
-         TreeNode(int val) {
+    TreeNode(int val) {
         this.val = val;
     }
 
-         TreeNode(int val, TreeNode left, TreeNode right) {
-          this.val = val;
-          this.left = left;
-          this.right = right;
-              }
-
-
- }
-public class Leetcode144 {
-      public static List<Integer> preorderTraversal(TreeNode root) {
-         List<Integer> res = new ArrayList<>();
-         helper(res, root);
-         return res;
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
     }
-    private static void helper(List<Integer> res, TreeNode root){
-        if(root == null){
+
+}
+     //Leetcode : 144 ===> Binary Tree Preorder Traversal
+     //11-03-2025
+
+public class Leetcode144 {
+
+    public static List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        helper(res, root);
+        return res;
+    }
+
+    private static void helper(List<Integer> res, TreeNode root) {
+        if (root == null) {
             return;
         }
         res.add(root.val);
         helper(res, root.left);
         helper(res, root.right);
     }
+
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         root.right = new TreeNode(2);
