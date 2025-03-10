@@ -22,7 +22,7 @@ class TreeNode {
     }
 
 }
-//Leetcode : 144 ===> Binary Tree Preorder Traversal
+//Leetcode : 145 ===> Binary Tree Postorder Traversal
 //11-03-2025
 
 public class Leetcode145 {
@@ -32,8 +32,9 @@ public class Leetcode145 {
         helper(res, root);
         return res;
     }
-    private static void helper(List<Integer> res, TreeNode root){
-        if(root == null){
+
+    private static void helper(List<Integer> res, TreeNode root) {
+        if (root == null) {
             return;
         }
         helper(res, root.left);
