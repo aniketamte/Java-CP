@@ -1,7 +1,9 @@
 
 public class Leetcode42 {
+    //Leetcode 42 : Trapping Rain Water
+    //11-03-2025
 
-    public static int trap(int[] height) {
+       public static int trap(int[] height) {
         int n = height.length;
 
         int LeftMax[] = new int[n];
