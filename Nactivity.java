@@ -24,5 +24,12 @@ public class Nactivity {
                   lastEnd = end[i];
             }
         }
+
+        System.out.println("Max Activities : " + maxAct);
+
+        for(int i=0; i<ans.size(); i++){
+            System.out.println("A" + ans.get(i) + " ");
+        }
+        System.out.println();
     }
 }
