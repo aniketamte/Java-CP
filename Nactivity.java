@@ -16,21 +16,25 @@ public class Nactivity {
             activities[i][2] = end[i];
         }
 
+        //Lambda Function
+        Arrays.sort(activities, Comparator.comparingDouble(o -> o[2]));
+
         //end time basis sorted
         int maxAct = 0;
         ArrayList<Integer> ans = new ArrayList<>();
 
         //1st activity
         maxAct = 1;
+        ans.add(activities[0][0]);
         ans.add(0);
-        int lastEnd = end[0];
+        int lastEnd = activities[0][2];
 
         for(int i=0; i<end.length; i++){
-            if(start[i] >= lastEnd){
+            if(activities[i][1] >= lastEnd){
                   //activity select
                   maxAct++;
-                  ans.add(i);
-                  lastEnd = end[i];
+                  ans.add(activities[i][0]);
+                  lastEnd = activities[i][2];
             }
         }
 
