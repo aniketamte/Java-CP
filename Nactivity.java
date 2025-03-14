@@ -2,6 +2,9 @@
 import java.util.*;
 
 public class Nactivity {
+    
+    //N_Activity Problem Using Greedy Algorithm
+    //14-03-2025
 
     public static void main(String[] args) {
         int start[] = {1, 3, 0, 5, 8, 5};
