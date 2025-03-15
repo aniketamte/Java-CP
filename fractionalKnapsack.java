@@ -8,5 +8,10 @@ public class fractionalKnapsack {
 
             double ratio[][] = new double[val.length][2];
             //0th col ==>idx; 1st col ==> ratio
+
+            for(int i=0; i<val.length; i++){
+                  ratio[i][0] = i;
+                  ratio[i][1] = val[i] / (double)weight[i];
+            }
       }
 }
