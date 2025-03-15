@@ -30,7 +30,11 @@ public class fractionalKnapsack {
                         capacity-= weight[idx];
                   } else{
                         //invclude fractional item
+                        finalval += (ratio[i][1] * capacity);
+                        capacity = 0;
+                        break;
                   }
             }
+            System.out.println("Final Value : " + finalval);
       }
 }
