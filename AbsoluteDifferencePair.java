@@ -11,5 +11,10 @@ public class AbsoluteDifferencePair {
             Arrays.sort(B);
 
             int minDiff = 0;
+
+            for(int i=0; i<A.length; i++){
+                  minDiff += Math.abs(A[i] - B[i]);
+            }
+            System.out.println("Minimum Absolute Difference of pair = " + minDiff);
       }
 }
