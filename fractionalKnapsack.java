@@ -1,3 +1,7 @@
+
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class fractionalKnapsack {
       //Fractional Knapsack problem ====> Greedy Algorithm
       //15-03-2025
@@ -12,6 +16,21 @@ public class fractionalKnapsack {
             for(int i=0; i<val.length; i++){
                   ratio[i][0] = i;
                   ratio[i][1] = val[i] / (double)weight[i];
+            }
+
+            //Ascending order sorting 
+            Arrays.sort(ratio, Comparator.comparingDouble(o -> o[1]));
+
+            int capacity= W;
+            int finalval= 0;
+            for(int i=ratio.length-1; i>=0; i--){
+                  int idx = (int)ratio[i][0];
+                  if(capacity >= weight[idx]){ //include full item
+                        finalval+= val[idx];
+                        capacity-= weight[idx];
+                  } else{
+                        //invclude fractional item
+                  }
             }
       }
 }
