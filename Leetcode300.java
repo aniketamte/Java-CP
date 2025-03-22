@@ -32,6 +32,7 @@ public class Leetcode300 {
                 }
             }
         }
+        print(dp);
         return dp[n][m];
     }
 
