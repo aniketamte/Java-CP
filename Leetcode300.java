@@ -57,5 +57,6 @@ public class Leetcode300 {
 
     public static void main(String[] args) {
       int nums[] = {50, 3, 10, 7, 40, 80};
+      System.out.println(lengthOfLIS(nums));
     }
 }
