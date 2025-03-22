@@ -1,4 +1,6 @@
 public class Leetcode1143{
+
+      //Solve using Recursion
       public static int LCS(String str1, String str2, int n, int m){
             if(n == 0 || m == 0){
                   return 0;
