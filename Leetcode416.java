@@ -3,9 +3,8 @@ import java.util.Arrays;
 
 public class Leetcode416 {
 
-      //Leetcode : 416 ===> Partition Equal Subset Sum
-      //23-03-2025
-
+    //Leetcode : 416 ===> Partition Equal Subset Sum
+    //23-03-2025
     private static boolean memo(int[] nums, int[][] dp, int sum, int idx) {
         if (sum == 0) {
             return true;
