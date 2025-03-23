@@ -2,7 +2,8 @@
 import java.util.Arrays;
 
 public class Leetcode416 {
-      private static boolean memo(int[] nums, int[][] dp, int sum, int idx) {
+
+    private static boolean memo(int[] nums, int[][] dp, int sum, int idx) {
         if (sum == 0) {
             return true;
         }
@@ -27,25 +28,26 @@ public class Leetcode416 {
         return dp[idx][sum] == 1 ? true : false;
     }
 
-      public static boolean canPartition(int[] nums){
-            int n = nums.length;
-            int sum = 0;
-            for(int num : nums){
-                  sum += num;
-            }
-            if((sum & 1) != 0){
-                  return false;
-            }
+    public static boolean canPartition(int[] nums) {
+        int n = nums.length;
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
+        if ((sum & 1) != 0) {
+            return false;
+        }
 
-            int dp[][] = new int[n][(sum >> 1) + 1];
+        int dp[][] = new int[n][(sum >> 1) + 1];
 
-            for(int i=0; i<n; i++){
-                  Arrays.fill(dp[i], -1);
-            }
-            return memo(nums, dp, sum>>1, 0);
-      }
-      public static void main(String[] args) {
-            int nums[] = {1,5,11,5};
-            System.out.println(canPartition(nums));
-      }
+        for (int i = 0; i < n; i++) {
+            Arrays.fill(dp[i], -1);
+        }
+        return memo(nums, dp, sum >> 1, 0);
+    }
+
+    public static void main(String[] args) {
+        int nums[] = {1, 5, 11, 5};
+        System.out.println(canPartition(nums));
+    }
 }
