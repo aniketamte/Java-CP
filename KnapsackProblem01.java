@@ -24,6 +24,7 @@ public class KnapsackProblem01 {
     }
 
     //Memoization Code
+    //Time complexity ===> O(n * W)
     public static int knapsanckMemorization(int val[], int wt[], int W, int n, int dp[][]) {
         //W = Capacity of Bag  
         if (W == 0 || n == 0) {
@@ -103,7 +104,7 @@ public class KnapsackProblem01 {
             }
         }
         System.out.println("Using Recursion Method ==> " + knapsanck(val, wt, W, val.length));
-        System.out.println(knapsanckMemorization(val, wt, W, val.length, dp));
+        System.out.println("Using Memoization Method ==> " + knapsanckMemorization(val, wt, W, val.length, dp));
         System.out.println(knapsackTab(val, wt, W));
     }
 }
