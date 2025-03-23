@@ -1,7 +1,9 @@
 
 public class KnapsackProblem01 {
-
+    //23-03-2025 ====> Striver SDE 180 Sheet
     //This is Recursion code
+
+    //int n ===> items
     public static int knapsanck(int val[], int wt[], int W, int n) {
         //W = Capacity of Bag  
         if (W == 0 || n == 0) {
@@ -21,7 +23,7 @@ public class KnapsackProblem01 {
         }
     }
 
-    //Memorization Code
+    //Memoization Code
     public static int knapsanckMemorization(int val[], int wt[], int W, int n, int dp[][]) {
         //W = Capacity of Bag  
         if (W == 0 || n == 0) {
@@ -100,7 +102,7 @@ public class KnapsackProblem01 {
                 dp[i][j] = -1;
             }
         }
-        System.out.println(knapsanck(val, wt, W, val.length));
+        System.out.println("Using Recursion Method ==> " + knapsanck(val, wt, W, val.length));
         System.out.println(knapsanckMemorization(val, wt, W, val.length, dp));
         System.out.println(knapsackTab(val, wt, W));
     }
