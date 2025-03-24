@@ -6,6 +6,7 @@ public class MatrixChainMultiplication {
     //Matrix chain Multiplication ===> GFG Practice Question
     //Solve this question using dynamic programming
     //22-03-2025
+
     //Print table
     public static void print(int dp[][]) {
         for (int i = 0; i < dp.length; i++) {
@@ -62,6 +63,8 @@ public class MatrixChainMultiplication {
         }
         return dp[i][j] = ans;
     }
+
+    //Solve using Tabulation Method
 
     public static void main(String[] args) {
         int arr[] = {1, 2, 3, 4, 3};  //n=5
