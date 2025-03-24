@@ -107,6 +107,7 @@ public class MatrixChainMultiplication {
 
         System.out.println("Solve using Memoization Method : " + MCM2(arr, 1, n - 1, dp));
         
-        System.out.println("Solve using Tabulation Method : " + MCM3(arr));
+        System.out.println("Solve using Tabulation Method : ");
+        System.out.println(MCM3(arr));
     }
 }
