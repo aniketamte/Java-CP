@@ -65,6 +65,33 @@ public class MatrixChainMultiplication {
     }
 
     //Solve using Tabulation Method
+    public static int MCM3(int arr[]){
+      int n = arr.length;
+      int dp[][] = new int[n][n];
+
+      //Initialization
+      for(int i=0; i<n; i++){
+            dp[i][i] = 0;
+      }
+      
+      //Bottom-up
+      for(int length = 2; length<=n-1; length++){
+            for(int i=1; i<=n-length; i++){
+                  int j = i+ length-1; //col
+                  dp[i][j] = Integer.MAX_VALUE;
+                  for(int k=i; k<=j-1; k++){
+                        int cost1 = dp[i][k];
+                        int cost2 = dp[k+1][j];
+                        int cost3 = arr[i-1] * arr[k] * arr[j];
+
+                        dp[i][j] = Math.min(dp[i][j], cost1+cost2+cost3);
+                  }
+            }
+      }
+      print(dp);
+      return dp[1][n-1];
+
+    }
 
     public static void main(String[] args) {
         int arr[] = {1, 2, 3, 4, 3};  //n=5
@@ -79,5 +106,7 @@ public class MatrixChainMultiplication {
         System.out.println("Solve using Recursion Method : " + MCM(arr, 1, n - 1));
 
         System.out.println("Solve using Memoization Method : " + MCM2(arr, 1, n - 1, dp));
+        
+        System.out.println("Solve using Tabulation Method : " + MCM3(arr));
     }
 }
