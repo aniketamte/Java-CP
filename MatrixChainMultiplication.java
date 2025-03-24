@@ -25,7 +25,8 @@ public class MatrixChainMultiplication{
             return ans;
       }
 
-
+      //Solve using Memoization Method
+      
       
       public static void main(String[] args) {
             int arr[] = {1,2,3,4,3};  //n=5
