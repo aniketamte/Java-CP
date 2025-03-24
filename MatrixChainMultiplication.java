@@ -4,6 +4,7 @@ public class MatrixChainMultiplication{
       //Solve this question using dynamic programming
       //22-03-2025
 
+      //solve using Recursion Method
       public static int MCM(int arr[], int i, int j){
             //i ===> Strating Point
             //j ===> Ending Point
@@ -23,6 +24,8 @@ public class MatrixChainMultiplication{
             }
             return ans;
       }
+
+
       
       public static void main(String[] args) {
             int arr[] = {1,2,3,4,3};  //n=5
