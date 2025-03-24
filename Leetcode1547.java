@@ -7,6 +7,7 @@ public class Leetcode1547 {
 
     //Leetcode : 1547 ===> Minimum Cost to Cut a Stick
     //Rod cutting example
+    //24-03-2025
 
      public static int minCost(int n, int[] cuts) {
         List<Integer> L = new ArrayList<>();
