@@ -5,6 +5,9 @@ import java.util.List;
 
 public class Leetcode1547 {
 
+    //Leetcode : 1547 ===> Minimum Cost to Cut a Stick
+    //Rod cutting example
+
      public static int minCost(int n, int[] cuts) {
         List<Integer> L = new ArrayList<>();
         for(int i : cuts) L.add(i); L.add(0); L.add(n);
