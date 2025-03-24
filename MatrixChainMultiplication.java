@@ -26,12 +26,12 @@ public class MatrixChainMultiplication{
       }
 
       //Solve using Memoization Method
-      
+
       
       public static void main(String[] args) {
             int arr[] = {1,2,3,4,3};  //n=5
             int n = arr.length;
 
-            System.out.println(MCM(arr, 1, n-1));
+            System.out.println("Solve using Recursion Method : " + MCM(arr, 1, n-1));
       }
 }
