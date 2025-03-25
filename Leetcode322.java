@@ -2,7 +2,7 @@ public class Leetcode322 {
 
     //Coin change -----> Question solve using DP
     //25-03-2025
-    
+
       public static int coinChanges(int coins[], int sum) {
         int n = coins.length;
         int dp[][] = new int[n + 1][sum + 1];
@@ -29,8 +29,8 @@ public class Leetcode322 {
     }
 
     public static void main(String[] args) {
-        int coins[] = {1, 2, 3};
-        int sum = 4;
+        int coins[] = {2,5,3,6};
+        int sum = 10;
         System.out.println(coinChanges(coins, sum));
     }
 }
