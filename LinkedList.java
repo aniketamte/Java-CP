@@ -165,7 +165,19 @@ public class LinkedList {
     }
 
     //Reverse LL using Iterative approach
-    
+    public void reverse(){
+        Node prev = null;
+        Node curr = head;
+        Node next;
+
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
@@ -198,5 +210,9 @@ public class LinkedList {
         System.out.println("Iterative Search : " + ll.iterativeSearch(10));
         System.out.println("Recursive Search : " + ll.recursiveSearch(10));
         System.out.println("Recursive Search : " + ll.recursiveSearch(52));
+
+        System.out.println("Reverse a LinkedList");
+        ll.reverse();
+        ll.print();
     }
 }
