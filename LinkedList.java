@@ -252,6 +252,29 @@ public class LinkedList {
         }
         return true;
     }
+
+    //Detect Loop in cycle
+    //Floyd's Cycle Finding Algorithm
+
+    public boolean hasCycle(Node head){
+        if(head == null || head.next == null){
+            return false;
+        }
+
+        Node slow = head;
+        Node fast = head;
+
+        while(fast.next != null && fast.next.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(fast == slow){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         // ll.head = new Node(1);
