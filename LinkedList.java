@@ -276,7 +276,30 @@ public class LinkedList {
     }
 
     //Remove cycle in Linked list
-    
+
+    public static void removeCycle(){
+        //1--> Detect Cycle
+        Node slow = head;
+        Node fast = head;
+        boolean cycle = false;
+
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (fast == slow) {
+                cycle = true;
+                break;
+            }
+        }
+
+        if(cycle == false){
+            return;
+        }
+        
+        //2-->Find Meeting Point
+        //3-->remove cycle -> last.next = null
+    }
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
