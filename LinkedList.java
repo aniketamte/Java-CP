@@ -317,5 +317,8 @@ public class LinkedList {
 
         System.out.println("Check List is Palindrome or Not : ");
         System.out.println(ll.checkPalindrome());
+
+        System.out.println("Detect a cycle in LinkedList : ");
+        System.out.println(ll.hasCycle(head));
     }
 }
