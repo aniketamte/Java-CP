@@ -179,6 +179,8 @@ public class LinkedList {
         head = prev;
     }
 
+    //Find and Remove Nth node from End using Iterative Approach
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         // ll.head = new Node(1);
