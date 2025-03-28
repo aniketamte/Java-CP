@@ -241,21 +241,31 @@ public class LinkedList {
         }
         Node right = prev;  //Right half head
         Node left = head;
+
+        //Step 3 -> Check Left half and Right Half
+        while(right != null){
+            if(left.data != right.data){
+                return false;
+            }
+            left = left.next;
+            right= right.next;
+        }
+        return true;
     }
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         // ll.head = new Node(1);
         // ll.head.next = new Node(2);
-        ll.addFirst(2);
         ll.addFirst(1);
+        ll.addFirst(2);
+        ll.addLast(3);
         ll.addLast(4);
         ll.addLast(5);
-        ll.addLast(6);
-        ll.addFirst(11);
-        ll.addFirst(12);
-        ll.addLast(42);
-        ll.addLast(52);
-        ll.addLast(62);
+        ll.addFirst(5);
+        ll.addFirst(4);
+        ll.addLast(3);
+        ll.addLast(2);
+        ll.addLast(1);
         //   ll.print();
         //   ll.addLast(6);
         //   ll.print();
