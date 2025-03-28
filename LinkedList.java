@@ -180,6 +180,32 @@ public class LinkedList {
     }
 
     //Find and Remove Nth node from End using Iterative Approach
+    public void deleteNthfromEnd(int n){
+        //Calculate Size
+        int size = 0;
+        Node temp = head;
+        while(temp != null){
+            temp = temp.next;
+            size++;
+        }
+
+        //Remove first operation ==> delete head
+        if(n == size){
+            head = head.next;
+            return;
+        }
+
+        //size-n
+        int i=1;
+        int iToFind = size-n;
+        Node prev = head;
+        while(i<iToFind){
+            prev=prev.next;
+            i++;
+        }
+        prev.next = prev.next.next;
+        return;
+    }
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
