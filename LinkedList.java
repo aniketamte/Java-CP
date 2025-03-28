@@ -209,7 +209,7 @@ public class LinkedList {
 
     //Check LL is Palindrome or not
 
-    //Step 1 ==> find mid using slow fast approach
+    //slow fast approach
     public Node findMid(Node head){
         Node slow = head;
         Node fast = head;
@@ -221,6 +221,13 @@ public class LinkedList {
         return slow;  //Slow is midNode
     }
 
+    public boolean checkPalindrome(){
+        if(head == null || head.next != null){
+            return true;
+        }
+        //Step 1 - find Mid
+        Node midNode = findMid(head);
+    }
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         // ll.head = new Node(1);
