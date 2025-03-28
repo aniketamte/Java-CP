@@ -291,5 +291,8 @@ public class LinkedList {
         System.out.println("Delete Nth Node : ");
         ll.deleteNthfromEnd(3);
         ll.print();
+
+        System.out.println("Check List is Palindrome or Not : ");
+        System.out.println(ll.checkPalindrome());
     }
 }
