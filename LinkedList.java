@@ -222,7 +222,7 @@ public class LinkedList {
     }
 
     public boolean checkPalindrome(){
-        if(head == null || head.next != null){
+        if(head == null || head.next == null){
             return true;
         }
         //Step 1 - find Mid
