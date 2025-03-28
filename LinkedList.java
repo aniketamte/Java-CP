@@ -161,7 +161,7 @@ public class LinkedList {
 
     //Recursive search in LL
     public int recursiveSearch(int key){
-
+        return helper(head, key);
     }
 
     public static void main(String[] args) {
