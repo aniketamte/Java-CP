@@ -277,13 +277,14 @@ public class LinkedList {
 
     //Remove cycle in Linked list
 
-    public static void removeCycle(){
-        //1--> Detect Cycle
+    public static boolean removeCycle() {
+        // 1. Detect Cycle
         Node slow = head;
         Node fast = head;
         boolean cycle = false;
+        Node prev = null;  // Track previous node to remove cycle
 
-        while (fast.next != null && fast.next.next != null) {
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
 
@@ -293,22 +294,21 @@ public class LinkedList {
             }
         }
 
-        if(cycle == false){
-            return;
+        if (!cycle) {
+            return false; // No cycle found
         }
 
-        //2-->Find Meeting Point
-
+        // 2. Find the start of the cycle
         slow = head;
-        Node prev = null;
-        while(slow != fast){
+        while (slow != fast) {
+            prev = fast;  // Track last node in the cycle
             slow = slow.next;
             fast = fast.next;
         }
 
-        //3-->remove cycle -> last.next = null
-
+        // 3. Remove cycle
         prev.next = null;
+        return true; // Cycle removed successfully
     }
 
     public static void main(String[] args) {
@@ -357,7 +357,6 @@ public class LinkedList {
         System.out.println("Detect a cycle in LinkedList : ");
         System.out.println(ll.hasCycle(head));
 
-        System.out.println("Remove cycle in Linked List : ");
-        ll.removeCycle();
+        System.out.println("Remove cycle in Linked List : " + ll.removeCycle());
     }
 }
