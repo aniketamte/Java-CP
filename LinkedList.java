@@ -44,7 +44,7 @@ public class LinkedList {
         //tail.next---. newNode
         tail.next = newNode;
         //Assign tail
-        newNode = tail;
+        tail = newNode;
     }
 
     //Print LinkedList
@@ -123,6 +123,23 @@ public class LinkedList {
         return val;
     }
 
+    //Iterative search in LL
+    public int iterativeSearch(int key){
+        Node temp = head;
+        int i = 0;
+
+        while(temp != null){
+            if(temp.data == key){
+                //Key Found
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+        //Key not found
+        return -1;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         // ll.head = new Node(1);
@@ -132,6 +149,11 @@ public class LinkedList {
         ll.addLast(4);
         ll.addLast(5);
         ll.addLast(6);
+        ll.addFirst(11);
+        ll.addFirst(12);
+        ll.addLast(42);
+        ll.addLast(52);
+        ll.addLast(62);
         //   ll.print();
         //   ll.addLast(6);
         //   ll.print();
@@ -143,5 +165,9 @@ public class LinkedList {
         ll.print();
         ll.removeLast();
         ll.print();
+
+        System.out.println("Iterative Search : " + ll.iterativeSearch(3));
+        System.out.println("Iterative Search : " + ll.iterativeSearch(52));
+        System.out.println("Iterative Search : " + ll.iterativeSearch(10));
     }
 }
