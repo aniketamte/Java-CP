@@ -140,6 +140,16 @@ public class LinkedList {
         return -1;
     }
 
+    //helper function
+    public int helper(Node head, int key){
+
+    }
+    
+    //Recursive search in LL
+    public int recursiveSearch(int key){
+
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         // ll.head = new Node(1);
