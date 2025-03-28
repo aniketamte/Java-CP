@@ -242,5 +242,9 @@ public class LinkedList {
         System.out.println("Reverse a LinkedList");
         ll.reverse();
         ll.print();
+
+        System.out.println("Delete Nth Node : ");
+        ll.deleteNthfromEnd(3);
+        ll.print();
     }
 }
