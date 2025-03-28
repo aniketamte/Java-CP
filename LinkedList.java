@@ -208,7 +208,18 @@ public class LinkedList {
     }
 
     //Check LL is Palindrome or not
-    
+
+    //Step 1 ==> find mid using slow fast approach
+    public Node findMid(Node head){
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next; //+1
+            fast = fast.next.next; //+2
+        }
+        return slow;  //Slow is midNode
+    }
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
