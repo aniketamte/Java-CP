@@ -356,5 +356,8 @@ public class LinkedList {
 
         System.out.println("Detect a cycle in LinkedList : ");
         System.out.println(ll.hasCycle(head));
+
+        System.out.println("Remove cycle in Linked List : ");
+        System.out.println(ll.removeCycle());
     }
 }
