@@ -296,9 +296,19 @@ public class LinkedList {
         if(cycle == false){
             return;
         }
-        
+
         //2-->Find Meeting Point
+
+        slow = head;
+        Node prev = null;
+        while(slow != fast){
+            slow = slow.next;
+            fast = fast.next;
+        }
+
         //3-->remove cycle -> last.next = null
+
+        prev.next = null;
     }
 
     public static void main(String[] args) {
