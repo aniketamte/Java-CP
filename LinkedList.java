@@ -227,6 +227,20 @@ public class LinkedList {
         }
         //Step 1 - find Mid
         Node midNode = findMid(head);
+
+        //Step 2 -> Reverse 2nd Half
+        Node prev = null;
+        Node curr = midNode;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Node right = prev;  //Right half head
+        Node left = head;
     }
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
