@@ -366,21 +366,28 @@ public class LinkedList {
         LinkedList ll = new LinkedList();
         // ll.head = new Node(1);
         // ll.head.next = new Node(2);
-        ll.addFirst(10);
-        ll.addFirst(2);
-        ll.addLast(30);
-        ll.addLast(14);
-        ll.addLast(5);
-        ll.addFirst(55);
-        ll.addFirst(24);
-        ll.addLast(2);
-        ll.addLast(21);
-        ll.addLast(1);
+        // ll.addFirst(10);
+        // ll.addFirst(2);
+        // ll.addLast(30);
+        // ll.addLast(14);
+        // ll.addLast(5);
+        // ll.addFirst(55);
+        // ll.addFirst(24);
+        // ll.addLast(2);
+        // ll.addLast(21);
+        // ll.addLast(1);
         //   ll.print();
         //   ll.addLast(6);
         //   ll.print();
         //   System.out.println("Add in Middle of the LinkedList : ");
         //   ll.addMiddle(2, 3);
+
+        ll.addFirst(1);
+        ll.addFirst(2);
+        ll.addFirst(3);
+        ll.addFirst(4);
+        ll.addFirst(5);
+        
         ll.print();
         System.out.println("Size Of LL : " + ll.size);
         ll.removeFirst();
