@@ -313,7 +313,12 @@ public class LinkedList {
 
     //Merge sort on Linked List
 
-    
+    /*
+       Step ==> 1) Find middle using slow fast
+                2) left half ===> Merge sort
+                   right half ===> Merge sort
+                3) Merge
+     */
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
