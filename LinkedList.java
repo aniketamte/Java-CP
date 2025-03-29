@@ -366,15 +366,15 @@ public class LinkedList {
         LinkedList ll = new LinkedList();
         // ll.head = new Node(1);
         // ll.head.next = new Node(2);
-        ll.addFirst(1);
+        ll.addFirst(10);
         ll.addFirst(2);
-        ll.addLast(3);
-        ll.addLast(4);
+        ll.addLast(30);
+        ll.addLast(14);
         ll.addLast(5);
-        ll.addFirst(5);
-        ll.addFirst(4);
-        ll.addLast(3);
+        ll.addFirst(55);
+        ll.addFirst(24);
         ll.addLast(2);
+        ll.addLast(21);
         ll.addLast(1);
         //   ll.print();
         //   ll.addLast(6);
@@ -409,5 +409,10 @@ public class LinkedList {
         System.out.println(ll.hasCycle(head));
 
         System.out.println("Remove cycle in Linked List : " + ll.removeCycle());
+
+        System.out.println("Sort Linked List using Merge Sort : ");
+        ll.print();
+        ll.head = ll.mergeSort(ll.head);
+        ll.print();
     }
 }
