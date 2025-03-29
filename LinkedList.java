@@ -322,6 +322,11 @@ public class LinkedList {
         }
 
         Node mid = findMid(head);
+
+        if (mid == null || mid.next == null) {
+            return head;
+        }
+
         Node rightHead = mid.next;
         mid.next = null;
         Node newLeft = mergeSort(head);  //left half
@@ -334,7 +339,7 @@ public class LinkedList {
         Node mergeLL = new Node(-1);
         Node temp = mergeLL;
 
-        while (head1 != null && head != null) {
+        while (head1 != null && head2 != null) {
             if (head1.data <= head2.data) {
                 temp.next = head1;
                 head1 = head1.next;
