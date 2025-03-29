@@ -317,7 +317,7 @@ public class LinkedList {
                 3) Merge Linked List
          */
 
-        if (head == null || head.next != null) {
+        if (head == null || head.next == null) {
             return head;
         }
 
