@@ -387,35 +387,35 @@ public class LinkedList {
         ll.addFirst(3);
         ll.addFirst(4);
         ll.addFirst(5);
-        
-        ll.print();
-        System.out.println("Size Of LL : " + ll.size);
-        ll.removeFirst();
-        ll.print();
-        ll.removeLast();
-        ll.print();
 
-        System.out.println("Iterative Search : " + ll.iterativeSearch(3));
-        System.out.println("Iterative Search : " + ll.iterativeSearch(52));
-        System.out.println("Iterative Search : " + ll.iterativeSearch(10));
-        System.out.println("Recursive Search : " + ll.recursiveSearch(10));
-        System.out.println("Recursive Search : " + ll.recursiveSearch(52));
+        // ll.print();
+        // System.out.println("Size Of LL : " + ll.size);
+        // ll.removeFirst();
+        // ll.print();
+        // ll.removeLast();
+        // ll.print();
 
-        System.out.println("Reverse a LinkedList");
-        ll.reverse();
-        ll.print();
+        // System.out.println("Iterative Search : " + ll.iterativeSearch(3));
+        // System.out.println("Iterative Search : " + ll.iterativeSearch(52));
+        // System.out.println("Iterative Search : " + ll.iterativeSearch(10));
+        // System.out.println("Recursive Search : " + ll.recursiveSearch(10));
+        // System.out.println("Recursive Search : " + ll.recursiveSearch(52));
 
-        System.out.println("Delete Nth Node : ");
-        ll.deleteNthfromEnd(3);
-        ll.print();
+        // System.out.println("Reverse a LinkedList");
+        // ll.reverse();
+        // ll.print();
 
-        System.out.println("Check List is Palindrome or Not : ");
-        System.out.println(ll.checkPalindrome());
+        // System.out.println("Delete Nth Node : ");
+        // ll.deleteNthfromEnd(3);
+        // ll.print();
 
-        System.out.println("Detect a cycle in LinkedList : ");
-        System.out.println(ll.hasCycle(head));
+        // System.out.println("Check List is Palindrome or Not : ");
+        // System.out.println(ll.checkPalindrome());
 
-        System.out.println("Remove cycle in Linked List : " + ll.removeCycle());
+        // System.out.println("Detect a cycle in LinkedList : ");
+        // System.out.println(ll.hasCycle(head));
+
+        // System.out.println("Remove cycle in Linked List : " + ll.removeCycle());
 
         System.out.println("Sort Linked List using Merge Sort : ");
         ll.print();
