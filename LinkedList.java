@@ -210,8 +210,13 @@ public class LinkedList {
     //Check LL is Palindrome or not
     //slow fast approach
     public Node findMid(Node head) {
+
+        if (head == null || head.next == null) {
+            return head;
+        }
+
         Node slow = head;
-        Node fast = head;
+        Node fast = head.next;
 
         while (fast != null && fast.next != null) {
             slow = slow.next; //+1
@@ -322,10 +327,6 @@ public class LinkedList {
         }
 
         Node mid = findMid(head);
-
-        if (mid == null || mid.next == null) {
-            return head;
-        }
 
         Node rightHead = mid.next;
         mid.next = null;
