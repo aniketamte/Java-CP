@@ -368,6 +368,7 @@ public class LinkedList {
 
     }
 
+    //Zig - Zag Linked List
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         // ll.head = new Node(1);
