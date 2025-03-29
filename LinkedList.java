@@ -315,9 +315,9 @@ public class LinkedList {
 
     /*
        Step ==> 1) Find middle using slow fast
-                2) left half ===> Merge sort
-                   right half ===> Merge sort
-                3) Merge
+                2) left half ===> Merge sort ==> start from head
+                   right half ===> Merge sort ==> start from mid.next
+                3) Merge Linked List
      */
 
     public static void main(String[] args) {
