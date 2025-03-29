@@ -313,12 +313,26 @@ public class LinkedList {
 
     //Merge sort on Linked List
 
-    /*
+     public Node mergeSort(Node head){
+         /*
        Step ==> 1) Find middle using slow fast
                 2) left half ===> Merge sort ==> start from head
                    right half ===> Merge sort ==> start from mid.next
                 3) Merge Linked List
-     */
+          */
+
+          if(head == null && head.next == null){
+            return head;
+          }
+
+          Node mid = findMid(head);
+          Node rightHead = mid.next;
+          mid.next = null;
+          Node newLeft = mergeSort(head);  //left half
+          Node newRight = mergeSort(rightHead); //right half
+
+          return merge(newLeft, newRight);
+     }
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
