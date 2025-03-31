@@ -1,6 +1,7 @@
 
 
 public class Leetcode169 {
+      //Revision
       //SOLUTION 1 => O(1)
       public static int majorityElement(int nums[]){
             int candidate = nums[0];
