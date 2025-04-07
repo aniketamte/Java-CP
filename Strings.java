@@ -25,6 +25,30 @@ public class Strings {
             return true;
       }
 
+      //Question 2 ====> Shortest Path
+
+      public static float getShortestPath(String path){
+            int x = 0, y = 0;
+
+            for(int i=0; i<path.length(); i++){
+                  char dir = path.charAt(i);
+
+                  //south
+                  if(dir == 'S'){
+                        y--;
+                  } else if(dir == 'N'){ //North
+                        y++;
+                  } else if(dir == 'W'){ //West
+                        x--;
+                  } else{  //East
+                        x++;
+                  }
+            }
+            int X2 =  x * x;
+            int Y2 =  y * y;
+            return (float)Math.sqrt(X2 + Y2);
+      }
+
     public static void main(String[] args) {
         char arr[] = {'a', 'b', 'c', 'd'};
         String str = "abcd";
@@ -55,5 +79,8 @@ public class Strings {
 
         //Check palindrome
         System.out.println(isPalindrome("raceacar"));
+
+        //Que 2 ===> Shortest path
+        System.out.println("Shortest Path : " + getShortestPath("WNEENESENNN"));
     }
 }
