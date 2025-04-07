@@ -19,5 +19,13 @@ public class Strings{
 
             //calculate name length
             System.out.println("Length : " + name.length());
+
+            //Concatenation ==> Join two words
+
+            String firstName = "Aniket";
+            String lastName = "Amte";
+            String fullName = firstName + " " + lastName;
+
+            System.out.println("Full Name : " + fullName);
       }
 }
