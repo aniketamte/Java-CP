@@ -10,7 +10,11 @@ public class Strings{
             //Strings are immutable
 
             Scanner sc = new Scanner(System.in);
-            String name = sc.next();
-            System.out.println(name);
+            System.out.println("Enter name");
+
+            //String name = sc.next();  --> use for print first single word
+            
+            String name = sc.nextLine();  //Use for print entire line
+            System.out.print("Display name : " + name);
       }
 }
