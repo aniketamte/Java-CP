@@ -15,6 +15,9 @@ public class Strings{
             //String name = sc.next();  --> use for print first single word
             
             String name = sc.nextLine();  //Use for print entire line
-            System.out.print("Display name : " + name);
+            System.out.println("Display name : " + name);
+
+            //calculate name length
+            System.out.println("Length : " + name.length());
       }
 }
