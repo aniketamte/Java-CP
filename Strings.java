@@ -49,6 +49,16 @@ public class Strings {
             return (float)Math.sqrt(X2 + Y2);
       }
 
+      //String Functions ===> Substring
+
+      public static String Substring(String str, int si, int ei){
+            String substr = "";
+            for(int i=si; i<ei; i++){
+                  substr += str.charAt(i);
+            }
+            return substr;
+      }
+
     public static void main(String[] args) {
         char arr[] = {'a', 'b', 'c', 'd'};
         String str = "abcd";
@@ -82,5 +92,8 @@ public class Strings {
 
         //Que 2 ===> Shortest path
         System.out.println("Shortest Path : " + getShortestPath("WNEENESENNN"));
+
+        //String Functions ===> Substring
+        System.out.println("Substring : " + Substring("HelloWorld", 0, 4));
     }
 }
