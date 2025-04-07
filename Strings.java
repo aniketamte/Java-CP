@@ -3,6 +3,13 @@ import java.util.Scanner;
 
 public class Strings {
 
+      public static void printLetter(String str){
+            for(int i=0; i<str.length(); i++){
+                  System.out.print(str.charAt(i) + " ");
+            }
+            System.out.println();
+      }
+
     public static void main(String[] args) {
         char arr[] = {'a', 'b', 'c', 'd'};
         String str = "abcd";
@@ -27,6 +34,8 @@ public class Strings {
         System.out.println("Full Name : " + fullName);
 
         //Find character index
-        System.out.println("Find Character at : " + fullName.charAt(8));
+        //System.out.println("Find Character at : " + fullName.charAt(8));
+
+        printLetter("Find character index : " + fullName);
     }
 }
