@@ -59,6 +59,8 @@ public class Strings {
             return substr;
       }
 
+      //Print Largest String  ====> Lexicographic
+
     public static void main(String[] args) {
         char arr[] = {'a', 'b', 'c', 'd'};
         String str = "abcd";
@@ -95,5 +97,16 @@ public class Strings {
 
         //String Functions ===> Substring
         System.out.println("Substring : " + Substring("HelloWorld", 0, 4));
+
+        //Print Largest String  ====> Lexicographic
+        String fruits[] = {"aab", "aac", "aaa"};
+
+        String largest = fruits[0];
+        for(int i = 1; i<fruits.length; i++){
+            if(largest.compareTo(fruits[i]) < 0){
+                  largest = fruits[i];
+            }
+        }
+        System.out.println("Largest String : " + largest);
     }
 }
