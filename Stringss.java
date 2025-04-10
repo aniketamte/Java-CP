@@ -40,5 +40,11 @@ public class Stringss{
             System.out.println();
 
             System.out.printf("Hello my name is %s and I am %s", "Aniket", "Student");
+
+            System.out.println();
+
+            //String concatenation Operator
+
+            System.out.println('a' + 'b');
       }
 }
