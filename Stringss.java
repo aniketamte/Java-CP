@@ -91,7 +91,9 @@ public class Stringss {
         //String Methods
         String name = "Aniket Amte";
         System.out.println(Arrays.toString(name.toCharArray()));
+        System.out.println(name);
         System.out.println(name.toLowerCase());
         System.out.println(name.toUpperCase());
+        System.out.println(name.concat(ans));
     }
 }
