@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Stringss {
 
@@ -88,5 +89,7 @@ public class Stringss {
         System.out.println(builder.reverse());
 
         //String Methods
+        String name = "Aniket Amte";
+        System.out.println(Arrays.toString(name.toCharArray()));
     }
 }
