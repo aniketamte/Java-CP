@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Stringss{
       /*
         1) Comarison Of String :-
@@ -57,5 +59,11 @@ public class Stringss{
              * d
              */
             System.out.println((char)('a' + 3)); 
+
+            System.out.println("a" + 1);  //a1 -> a is a string not a character 
+
+            //Integer will be converted to integer that will call toString()
+
+            System.out.println("Aniket" + new ArrayList<>());
       }
 }
