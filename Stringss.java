@@ -18,5 +18,16 @@ public class Stringss{
             String name2 = new String("Amte");
             System.out.println(name1 == name2);
             System.out.println(name1.equals(name2));
+
+            //charAt method
+
+            System.out.println(name1.charAt(0));
+
+            System.out.println(56);
+            Integer num = new Integer(56);
+            System.out.println(num.toString());
+
+
+            //Preety printing
       }
 }
