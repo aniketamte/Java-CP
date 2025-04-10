@@ -29,5 +29,11 @@ public class Stringss{
 
 
             //Preety printing
+              // -> % = placeholder
+
+            float ab = 453.123f;
+            //System.out.printf("Formatted number is %.1f", ab);
+
+            System.out.println("PI value is : " + Math.PI);
       }
 }
