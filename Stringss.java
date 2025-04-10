@@ -45,6 +45,8 @@ public class Stringss{
 
             //String concatenation Operator
 
-            System.out.println('a' + 'b');
+            System.out.println('a' + 'b');   //Character value --->  a -> 97 and b -> 98  ====> 97 + 98 = 195
+
+            System.out.println("a" + "b");  //ab  -> concatenate the string
       }
 }
