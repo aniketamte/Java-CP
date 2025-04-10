@@ -65,5 +65,11 @@ public class Stringss{
             //Integer will be converted to integer that will call toString()
 
             System.out.println("Aniket" + new ArrayList<>());
+
+            System.out.println("Aniket" + new Integer(17));
+
+            String ans = new Integer(17) + " " + new ArrayList<>();
+
+            System.out.println(ans);
       }
 }
