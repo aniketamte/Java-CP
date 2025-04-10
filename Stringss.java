@@ -35,5 +35,10 @@ public class Stringss{
             //System.out.printf("Formatted number is %.1f", ab);
 
             System.out.println("PI value is : " + Math.PI);
+
+            System.out.printf("Pie: %.3f", Math.PI);
+            System.out.println();
+
+            System.out.printf("Hello my name is %s and I am %s", "Aniket", "Student");
       }
 }
