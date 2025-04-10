@@ -48,5 +48,14 @@ public class Stringss{
             System.out.println('a' + 'b');   //Character value --->  a -> 97 and b -> 98  ====> 97 + 98 = 195
 
             System.out.println("a" + "b");  //ab  -> concatenate the string
+
+            /*
+             * 'a' is a char with a Unicode value of 97.
+             * 'a' + 3 is a numeric operation:
+             * 97 + 3 = 100
+             * (char)100
+             * d
+             */
+            System.out.println((char)('a' + 3)); 
       }
 }
