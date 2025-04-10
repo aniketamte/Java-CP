@@ -71,5 +71,14 @@ public class Stringss{
             String ans = new Integer(17) + " " + new ArrayList<>();
 
             System.out.println(ans);
+
+
+            //String Performance
+
+            String series = " ";
+            for(int i=0; i<26; i++){
+                  char ch = (char)('a' + i);
+                  System.out.println(ch);
+            }
       }
 }
