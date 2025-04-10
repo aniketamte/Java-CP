@@ -95,5 +95,22 @@ public class Stringss {
         System.out.println(name.toLowerCase());
         System.out.println(name.toUpperCase());
         System.out.println(name.concat(ans));
+
+        //Check string palindrome or not
+        System.out.println(isPalindrome("racecar"));
+    }
+
+    static boolean isPalindrome(String str1){
+      str1 = str1.toLowerCase();
+      for(int i=0; i<=str1.length()/2; i++){
+            char start = str1.charAt(i);
+            char end = str1.charAt(str1.length() - 1 - i);
+
+            if(start != end){
+                  return false;
+            }
+      }
+      return true;
+      
     }
 }
