@@ -100,6 +100,38 @@ public class Recursion {
         return halfPowerSq;
     }
 
+    //tiling problem
+    public static int tilingProblem(int n) {
+        //2*n floor size
+
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+
+        int verticaltile = tilingProblem(n - 1);
+        int horizontalTile = tilingProblem(n - 2);
+
+        int totalWays = verticaltile + horizontalTile;
+        return totalWays;
+
+    }
+
+    //Remove duplicates in a string "appnnacollege"
+    public static void removeDuplicates(String str, int idx, StringBuilder newStr, boolean map[]) {
+        if (idx == str.length()) {
+            System.out.println(newStr);
+            return;
+        }
+        char currChar = str.charAt(idx);
+        if (map[currChar - 'a'] == true) {
+            removeDuplicates(str, idx + 1, newStr, map);
+        } else {
+            map[currChar - 'a'] = true;
+            removeDuplicates(str, idx + 1, newStr.append(currChar), map);
+        }
+    }
+
+    //Friends pairing Problem
     public static void main(String[] args) {
         printDecNo(10);
 
@@ -123,5 +155,9 @@ public class Recursion {
         System.out.println(power(2, 3));
 
         System.out.println(powerOptimized(5, 5));
+
+        System.out.println(tilingProblem(3));
+
+        removeDuplicates("appnnacollege", 0, new StringBuilder(""), new boolean[26]);
     }
 }
