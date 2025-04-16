@@ -65,4 +65,5 @@ public class Pattern {
     static void pattern6(int n){
       
     }
+    
 }
