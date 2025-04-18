@@ -144,7 +144,19 @@ public class Recursion {
             skipChar(p + ch, up.substring(1));
         }
     }
-    
+
+    //Return a string
+    public static String skip(String up){
+        if(up.isEmpty()){
+            return "";
+        }
+        char ch = up.charAt(0);
+            if (ch == 'a') {
+                return skip(up.substring(1));
+            } else {
+                return ch + skip(up.substring(1));
+            }
+    }
     public static void main(String[] args) {
         printDecNo(10);
 
@@ -174,6 +186,9 @@ public class Recursion {
         removeDuplicates("appnnacollege", 0, new StringBuilder(""), new boolean[26]);
 
         skipChar(" ", "baccdah");
+        System.out.println();
+
+        System.out.println(skip("baccdah"));
         System.out.println();
     }
 }
