@@ -5,7 +5,7 @@ public class Leetcode3 {
 
     public static int lengthOfLongestSubstring(String s) {
         if (s.length() == 0) {
-            return 0;
+            return 0;         
         }
         int maxans = Integer.MIN_VALUE;
         for (int i = 0; i < s.length(); i++) // outer loop for traversing the string

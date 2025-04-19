@@ -1,2 +1,0 @@
-
-        ans.add(activit
