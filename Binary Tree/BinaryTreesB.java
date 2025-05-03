@@ -1,7 +1,6 @@
 
 import java.util.*;
 
-
 public class BinaryTreesB {
       static class Node {
             int data;
@@ -38,7 +37,8 @@ public class BinaryTreesB {
                   preOrder(root.left);
                   preOrder(root.right);
             }
-            public static void inOrder(Node root){
+
+            public static void inOrder(Node root) {
                   if (root == null) {
                         return;
                   }
@@ -46,36 +46,37 @@ public class BinaryTreesB {
                   System.out.print(root.data + " ");
                   inOrder(root.right);
             }
-            public static void postOrder(Node root){
+
+            public static void postOrder(Node root) {
                   if (root == null) {
-                        return; 
+                        return;
                   }
                   postOrder(root.left);
                   postOrder(root.right);
                   System.out.print(root.data + " ");
-                  
-            
+
             }
-            public static void levelOrder(Node root){
-                  if(root == null){
+
+            public static void levelOrder(Node root) {
+                  if (root == null) {
                         return;
                   }
                   Queue<Node> q = new LinkedList<>();
                   q.add(root);
                   q.add(null);
 
-                  while(!q.isEmpty()){
+                  while (!q.isEmpty()) {
                         Node currNode = q.remove();
-                        if(currNode == null){
+                        if (currNode == null) {
                               System.out.println();
-                              if(q.isEmpty()){
+                              if (q.isEmpty()) {
                                     break;
-                              } else{
+                              } else {
                                     q.add(null);
                               }
-                        } else{
+                        } else {
                               System.out.print(currNode.data + " ");
-                              if(currNode.left != null){
+                              if (currNode.left != null) {
                                     q.add(currNode.left);
                               }
                               if (currNode.right != null) {
@@ -84,9 +85,11 @@ public class BinaryTreesB {
                         }
                   }
             }
+
+      
       }
 
-       public static void main(String[] args) {
+      public static void main(String[] args) {
             int node[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
             BinaryTree tree = new BinaryTree();
             Node root = tree.buildTree(node);
@@ -98,5 +101,7 @@ public class BinaryTreesB {
             tree.postOrder(root);
             System.out.println();
             tree.levelOrder(root);
+            // System.out.println();
+            // tree.heightOfTree(root);
       }
 }
