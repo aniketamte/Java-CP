@@ -21,7 +21,7 @@ public class GFG04 {
             System.out.print(nums[i] + " ");
         }
         System.out.println();
-    }
+    } 
     public static void main(String[] args) {
       int nums[] = {1, 2, 3, 4, 5};
       int k=2;
