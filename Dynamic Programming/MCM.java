@@ -35,6 +35,34 @@ public class MCM {
             }
             return dp[i][j] = minCost;
       }
+
+      //Using Tabulation
+
+      public static int mcm3(int arr[]){
+            int n = arr.length;
+            int dp[][] = new int[n][n];
+
+            //initialization
+            for(int i=0; i<n; i++){
+                  dp[i][i] = 0;
+            }
+
+            //bottom-up
+            for (int len = 2; len < n; len++) { // len is the chain length
+                  for (int i = 1; i < n - len + 1; i++) {
+                        int j = i + len - 1;
+                        dp[i][j] = Integer.MAX_VALUE;
+
+                        for (int k = i; k < j; k++) {
+                              int cost = dp[i][k] + dp[k + 1][j] + arr[i - 1] * arr[k] * arr[j];
+                              dp[i][j] = Math.min(dp[i][j], cost);
+                        }
+                  }
+            }
+
+            return dp[1][n - 1];
+      }
+
       public static void main(String[] args) {
             int[] arr = {1, 2, 3, 4, 3};
             int n = arr.length;
@@ -44,5 +72,6 @@ public class MCM {
                   Arrays.fill(dp[i], -1);
             }
             System.out.println("Minimum Cost is : " + mcm2(arr, 1, n-1, dp));
+            System.out.println("Minimum Cost is : " + mcm3(arr));
       }
 }
