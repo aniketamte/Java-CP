@@ -61,7 +61,7 @@ public class BinaryTreesB {
                   if (root == null) {
                         return;
                   }
-                  Queue<Node> q = new LinkedList<>();
+                  Queue<> q = new LinkedList<>();
                   q.add(root);
                   q.add(null);
 
