@@ -62,5 +62,11 @@ public class CreateGraph {
                   Edge e = graph[1].get(i);
                   System.out.println("1's neighbour: " + e.dest + " with weight: " + e.weight);
             }
+
+            //3's neighbour
+            for(int i=0; i<graph[3].size(); i++){
+                  Edge e = graph[3].get(i);
+                  System.out.println("3's neighbour: " + e.dest + " with weight: " + e.weight);
+            }
       }
 }
