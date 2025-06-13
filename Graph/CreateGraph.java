@@ -45,12 +45,6 @@ public class CreateGraph {
             //4 vertex
             graph[4].add(new Edge(4, 2, 2));
 
-            //2's neighbour
-            for(int i=0; i<graph[2].size(); i++){
-                  Edge e = graph[2].get(i);
-                  System.out.println("2's neighbour: " + e.dest + " with weight: " + e.weight);
-            }
-
             //0's neighbour
             for(int i=0; i<graph[0].size(); i++){
                   Edge e = graph[0].get(i);
@@ -63,6 +57,12 @@ public class CreateGraph {
                   System.out.println("1's neighbour: " + e.dest + " with weight: " + e.weight);
             }
 
+            // 2's neighbour
+            for (int i = 0; i < graph[2].size(); i++) {
+                  Edge e = graph[2].get(i);
+                  System.out.println("2's neighbour: " + e.dest + " with weight: " + e.weight);
+            }
+            
             //3's neighbour
             for(int i=0; i<graph[3].size(); i++){
                   Edge e = graph[3].get(i);
