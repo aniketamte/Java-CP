@@ -1,5 +1,3 @@
-
-
 public class Leetcode88 {
       public static void merge(int[] nums1, int m, int[] nums2, int n){
             int idx = m+n-1;
