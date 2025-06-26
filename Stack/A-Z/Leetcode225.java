@@ -37,26 +37,64 @@ public class Leetcode225 {
       }
 
       // Main method to test the stack
+      // public static void main(String[] args) {
+      // Leetcode225 stack = new Leetcode225(); // Create stack object
+
+      // // Push elements into the stack
+      // stack.push(10);
+      // stack.push(20);
+      // stack.push(30);
+
+      // // Stack is now: Top -> 30, then 20, then 10
+
+      // // Display top element
+      // System.out.println("Top element: " + stack.top()); // Output: 30
+
+      // // Pop top element
+      // System.out.println("Popped: " + stack.pop()); // Output: 30
+
+      // // New top after popping
+      // System.out.println("New top: " + stack.top()); // Output: 20
+
+      // // Check if empty
+      // System.out.println("Is empty? " + stack.empty()); // Output: false
+      // }
+
       public static void main(String[] args) {
-            Leetcode225 stack = new Leetcode225(); // Create stack object
+            // List to store the result
+            List<Object> output = new ArrayList<>();
 
-            // Push elements into the stack
-            stack.push(10);
-            stack.push(20);
-            stack.push(30);
+            // Input commands and values
+            String[] commands = { "MyStack", "push", "push", "top", "pop", "empty" };
+            int[][] values = { {}, { 1 }, { 2 }, {}, {}, {} };
 
-            // Stack is now: Top -> 30, then 20, then 10
+            // Stack reference
+            Leetcode225 myStack = null;
 
-            // Display top element
-            System.out.println("Top element: " + stack.top()); // Output: 30
+            for (int i = 0; i < commands.length; i++) {
+                  switch (commands[i]) {
+                        case "MyStack":
+                              myStack = new Leetcode225();
+                              output.add(null); // Constructor returns null
+                              break;
+                        case "push":
+                              myStack.push(values[i][0]);
+                              output.add(null); // push returns null
+                              break;
+                        case "top":
+                              output.add(myStack.top());
+                              break;
+                        case "pop":
+                              output.add(myStack.pop());
+                              break;
+                        case "empty":
+                              output.add(myStack.empty());
+                              break;
+                  }
+            }
 
-            // Pop top element
-            System.out.println("Popped: " + stack.pop()); // Output: 30
-
-            // New top after popping
-            System.out.println("New top: " + stack.top()); // Output: 20
-
-            // Check if empty
-            System.out.println("Is empty? " + stack.empty()); // Output: false
+            // Print output like LeetCode does
+            System.out.println(output);
       }
+
 }
