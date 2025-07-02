@@ -10,20 +10,15 @@ public class Leetcode22 {
       }
 
       private static void solve(int n, String curr, int open, int close) {
-            if (curr.length() == 2 * n) {
+            if(curr.length() == 2 * n){
                   result.add(curr);
                   return;
             }
-
-            if (open < n) {
-                  curr += '(';
-                  solve(n, curr, open + 1, close);
-                  curr = curr.substring(0, curr.length() - 1);
+            if(open < n){
+                  solve(n, curr + "(", open + 1, close);
             }
-            if (close < open) {
-                  curr += ')';
-                  solve(n, curr, open, close + 1);
-                  curr = curr.substring(0, curr.length() - 1);
+            if(close < open){
+                  solve(n, curr + ")", open, close + 1);
             }
       }
       public static void main(String[] args) {
