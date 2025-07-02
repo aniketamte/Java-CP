@@ -3,8 +3,9 @@ public class Subsets {
             if(i == str.length()){
                   if(ans.length() == 0){
                         System.out.println("NULL");
+                  } else{
+                        System.out.println(ans);
                   }
-                  System.out.println(ans);
                   return;
             }
             //Yes Choice
