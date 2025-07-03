@@ -1570,7 +1570,7 @@ public class Main {
 }
 ```
 
-Here, the decision of which `sound()` method to call is made at **run-time**.
+Here, is the decision of which `sound()` method to call is made at **run-time**.
 
 ---
 
