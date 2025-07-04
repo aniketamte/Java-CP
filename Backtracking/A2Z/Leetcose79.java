@@ -19,6 +19,6 @@ public class Leetcose79 {
             if(i<0 || i>= board.length || j <0 || j>= board[0].length || board[i][j] != word.charAt(idx) || board[i][j] == '$'){
                   return false;
             }
-            return 
+            
       }
 }
