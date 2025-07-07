@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Swap {
       public static void swap(ArrayList<Integer> list, int idx1, int idx2){
@@ -19,6 +20,12 @@ public class Swap {
 
             System.out.println(list);
             swap(list, idx1, idx2);
+            System.out.println(list);
+
+            Collections.sort(list);
+            System.out.println(list); //Ascending
+
+            Collections.sort(list, Collections.reverseOrder()); //Descending order
             System.out.println(list);
       }
 }
