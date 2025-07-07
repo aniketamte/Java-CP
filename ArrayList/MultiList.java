@@ -34,5 +34,21 @@ public class MultiList {
             }
 
             System.out.println(mainList);
+
+            ArrayList<Integer> list3 = new ArrayList<>();
+            ArrayList<Integer> list4 = new ArrayList<>();
+            ArrayList<Integer> list5 = new ArrayList<>();
+
+            for(int i=1; i<=5; i++){
+                  list3.add(i*1);
+                  list4.add(i*2);
+                  list5.add(i*3);
+            }
+
+            mainList.add(list3);
+            mainList.add(list4);
+            mainList.add(list5);
+
+            System.out.println(mainList);
       }
 }
