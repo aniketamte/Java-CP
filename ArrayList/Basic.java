@@ -70,5 +70,7 @@ public class Basic {
                   }
             }
             System.out.println("Maximum element in the ArrayList is => " + max);
+
+            
       }
 }
