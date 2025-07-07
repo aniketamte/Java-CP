@@ -25,40 +25,50 @@ public class Basic {
             list3.add(true);
             list3.add(false);
             list3.add(true);
-            
+
             System.out.println(list1);
             System.out.println(list2);
             System.out.println(list3);
 
-            //Get Operation
+            // Get Operation
             int element = list1.get(2);
             System.out.println(element + " is the element at index 2");
 
-            //Remove element
+            // Remove element
             list1.remove(1);
             System.out.println(list1);
 
-            //Set Operation
+            // Set Operation
             list1.set(1, 10);
             System.out.println(list1);
 
-            //contains element
-            System.out.println(list1.contains(10) );
+            // contains element
+            System.out.println(list1.contains(10));
             System.out.println(list1.contains(11));
 
-            //Size of the list
+            // Size of the list
             System.out.println(list1.size());
 
-            //Print the ArrayList
-            for(int i=0; i<list1.size(); i++){
+            // Print the ArrayList
+            for (int i = 0; i < list1.size(); i++) {
                   System.out.print(list1.get(i) + " ");
             }
             System.out.println();
 
-            //Reverse the ArrayList
-            for(int i=list1.size()-1; i>=0; i--){
+            // Reverse the ArrayList
+            for (int i = list1.size() - 1; i >= 0; i--) {
                   System.out.print(list1.get(i) + " ");
             }
             System.out.println();
+
+            // Find maxiumum element in the ArrayList
+
+            int max = Integer.MIN_VALUE;
+            for (int i = 0; i < list1.size(); i++) {
+                  if (list1.get(i) > max) {
+                        max = list1.get(i);
+                  }
+            }
+            System.out.println("Maximum element in the ArrayList is => " + max);
       }
 }
