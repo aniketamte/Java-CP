@@ -7,7 +7,7 @@ public class Leetcode81 {
                         return true; 
                   }
 
-                  if(nums[left] == mid && nums[mid] == nums[right]){
+                  if(nums[left] == nums[mid] && nums[mid] == nums[right]){
                         left++;
                         right--;
                         continue;
