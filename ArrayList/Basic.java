@@ -35,5 +35,14 @@ public class Basic {
             //contains element
             System.out.println(list1.contains(10) );
             System.out.println(list1.contains(11));
+
+            //Size of the list
+            System.out.println(list1.size());
+
+            //Print the ArrayList
+            for(int i=0; i<list1.size(); i++){
+                  System.out.print(list1.get(i) + " ");
+            }
+            System.out.println();
       }
 }
