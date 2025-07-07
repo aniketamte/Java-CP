@@ -9,13 +9,23 @@ public class Basic {
             list1.add(1);
             list1.add(2);
             list1.add(3);
+            list1.add(4);
+            list1.add(5);
+            list1.add(6);
+            list1.add(7);
+
             list1.add(1, 9);
+
             list2.add("a");
             list2.add("b");
             list2.add("c");
+            list2.add("d");
+            list2.add("e");
+
             list3.add(true);
             list3.add(false);
             list3.add(true);
+            
             System.out.println(list1);
             System.out.println(list2);
             System.out.println(list3);
@@ -41,6 +51,12 @@ public class Basic {
 
             //Print the ArrayList
             for(int i=0; i<list1.size(); i++){
+                  System.out.print(list1.get(i) + " ");
+            }
+            System.out.println();
+
+            //Reverse the ArrayList
+            for(int i=list1.size()-1; i>=0; i--){
                   System.out.print(list1.get(i) + " ");
             }
             System.out.println();
