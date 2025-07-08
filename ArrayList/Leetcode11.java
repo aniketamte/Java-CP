@@ -12,6 +12,27 @@ public class Leetcode11 {
             }
             return maxWater;
       }
+      
+      //Using two pointer approach
+
+      public static int max(ArrayList<Integer> height){
+            int maxWater = 0;
+            int lp = 0;
+            int rp = height.size() - 1;
+            while (lp < rp) {
+                  int w = rp - lp;
+                  int ht = Math.min(height.get(lp), height.get(rp));
+                  int currWater = w * ht;
+                  maxWater = Math.max(maxWater, currWater);
+
+                  if (height.get(lp) < height.get(rp)) {
+                        lp++;
+                  } else {
+                        rp--;
+                  }
+            }
+            return maxWater;
+      }
       public static void main(String[] args) {
             ArrayList<Integer> height = new ArrayList<>();
             height.add(1);
@@ -25,5 +46,6 @@ public class Leetcode11 {
             height.add(7);
 
             System.out.println(maxArea(height));
+            System.out.println(max(height));
       }
 }
