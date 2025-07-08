@@ -12,6 +12,23 @@ public class PairSumI {
             }
             return false;
       }
+
+      //Two pointer approach
+      public static boolean pairsum1(ArrayList<Integer> list, int target){
+            int lp = 0;
+            int rp = list.size()-1;
+            while(lp < rp){
+                  if(list.get(lp) + list.get(rp) == target){
+                        return true;
+                  }
+                  if(list.get(lp) + list.get(rp) < target){
+                        lp++;
+                  } else{
+                        rp--;
+                  }
+            }
+            return false;
+      }
       public static void main(String[] args) {
             ArrayList<Integer> list = new ArrayList<>();
             list.add(1);
@@ -21,8 +38,9 @@ public class PairSumI {
             list.add(5);
             list.add(6);
 
-            int target = 5;
+            int target = 50;
 
             System.out.println(pairSum1(list, target));
+            System.out.println(pairsum1(list, target));
       }
 }
