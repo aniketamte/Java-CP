@@ -1,5 +1,4 @@
-package ArrayList.Assignment;
-
+import java.util.*;
 public class Question1 {
       
 }
