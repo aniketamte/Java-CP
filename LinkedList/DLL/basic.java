@@ -27,6 +27,17 @@ public class basic{
             head.prev = newNode;
             head = newNode;
       }
+      //AddLast
+      public static void addLast(int data){
+            Node newNode = new Node(data);
+            size++;
+            if(head == null){
+                  head = tail = newNode;
+            }
+            tail.next = newNode;
+            newNode.prev = tail;
+            tail = newNode;
+      }
       //Print
       public static void print(){
             Node temp = head;
@@ -74,11 +85,16 @@ public class basic{
             dll.print();
             System.out.println(dll.size);
 
+            dll.addLast(10);
+            dll.print();
+            System.out.println(dll.size);
+
             dll.removeFirst(size);
             dll.print(); 
             System.out.println(dll.size);
 
             dll.reverse();
             dll.print();
+
       }
 }
