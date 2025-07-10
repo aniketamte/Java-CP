@@ -36,13 +36,26 @@ public class basic{
             }
             System.out.println("null");
       }
+
       //RemoveFirst
+      public static void removeFirst(int data){
+            Node newNode = new Node(data);
+            if(head == null){
+                  head = tail = newNode;
+            }
+            head = head.next;
+            head.prev = null;
+            size--;
+      }
 
       public static void main(String[] args){
             basic dll = new basic();
             dll.addFirst(3);
             dll.addFirst(2);
             dll.addFirst(1);
+            dll.print();
+            System.out.println(dll.size);
+            dll.removeFirst(size);
             dll.print();
             System.out.println(dll.size);
       }
