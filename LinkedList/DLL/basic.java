@@ -48,15 +48,37 @@ public class basic{
             size--;
       }
 
+      //Reverse a DLL
+      public static void reverse(){
+            Node curr = head;
+            Node prev = null;
+            Node next;
+            while(curr != null){
+                  next = curr.next;
+                  curr.next = prev;
+                  curr.prev = next;
+                  prev = curr;
+                  curr = next;
+            }
+            head = prev;
+      }
+
       public static void main(String[] args){
             basic dll = new basic();
             dll.addFirst(3);
             dll.addFirst(2);
             dll.addFirst(1);
+            dll.addFirst(5);
+            dll.addFirst(6);
+
             dll.print();
             System.out.println(dll.size);
+
             dll.removeFirst(size);
-            dll.print();
+            dll.print(); 
             System.out.println(dll.size);
+
+            dll.reverse();
+            dll.print();
       }
 }
