@@ -16,6 +16,10 @@ public class Leetcode328 {
             }
       }
       public static ListNode oddEvenList(ListNode head){
+            
+            if (head == null || head.next == null){
+                  return head;
+            }
             ListNode odd = head;
             ListNode even = head.next;
 
