@@ -54,7 +54,6 @@ public class Leetcode19 {
 
             // Step 2: Call the function
             ListNode result = removeNthFromEnd(head, n);
-
             // Step 3: Print the result
             while (result != null) {
                   System.out.print(result.val);
