@@ -13,6 +13,8 @@ public class InBuiltExample {
             que.add(80);
             que.add(90);
             System.out.println(que);
-            
+            System.out.println(que.peek());
+            System.out.println(que.remove());
+            System.out.println(que);
       }
 }
