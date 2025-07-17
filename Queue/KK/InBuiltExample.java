@@ -18,7 +18,7 @@ public class InBuiltExample {
             System.out.println(que.remove());
             System.out.println(que);
 
-            //Doubly ended queue - Deque
+            // Doubly ended queue - Deque
             Deque<Integer> deque = new ArrayDeque<>();
             deque.add(10);
             deque.add(20);
@@ -27,8 +27,21 @@ public class InBuiltExample {
             deque.add(50);
             System.out.println(deque);
             System.out.println(deque.poll());
-            System.out.println(deque.offer(900));
+            System.out.println(deque.offer(900)); // work as add in queue (id deque.add() method is not available then
+                                                  // use offer() method)
             System.err.println(deque);
             System.out.println(deque.peek());
+            deque.add(91);
+            System.err.println(deque);
+            deque.addLast(92);
+            System.err.println(deque);
+            deque.addFirst(93);
+            System.err.println(deque);
+            System.out.println(deque.pollFirst());
+            System.err.println(deque);
+            System.out.println(deque.pollLast());// remove last element
+            System.err.println(deque);
+
+            //In deque we can insert from first and last both and also remove from first and last both 
       }
 }
