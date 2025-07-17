@@ -54,6 +54,12 @@ public class Leetcode3201 {
             return Math.max(take, skip);
       }
 
+      //using bottom-up Approach
+
+      public static int maximumLengthDP(int[] nums){
+            int n = nums.length;
+            int[][] dp1 = new int[n][1];
+      }
       public static void main(String[] args) {
             int[] nums = {1,2,1,1,2,1,2};
             System.out.println(maximumLength(nums));
