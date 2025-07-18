@@ -50,6 +50,5 @@ public class Stack {
             Stack stack = new Stack();
             stack.push(1);
             stack.push(2);
-            
       }
 }
