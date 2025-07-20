@@ -76,7 +76,7 @@ At this point, **no car exists**. We have only written a plan for what a Car loo
 * An **object** is a **real instance** of a class.
 * It occupies **memory** and can be used to call class methods or access fields.
 
-### ✅ Java Object Syntax:
+### ✅ Java  Object Syntax:
 
 ```java
 ClassName objName = new ClassName();
