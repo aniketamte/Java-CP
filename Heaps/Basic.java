@@ -18,15 +18,15 @@ public class Basic {
       public static void main(String[] args) {
             // PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());  //print in reverse order
 
-            PriorityQueue<Integer> pq = new PriorityQueue<>(); //print in ascending order
+            PriorityQueue<Student> pq = new PriorityQueue<>(); //print in ascending order
 
-            pq.add(3);
-            pq.add(4);
-            pq.add(1);
-            pq.add(7);
+            pq.add(new Student("A", 3));
+            pq.add(new Student("B", 1));
+            pq.add(new Student("C", 7));
+            pq.add(new Student("D", 4));
 
             while(!pq.isEmpty()){
-                  System.out.println(pq.peek());
+                  System.out.println(pq.peek().name + "->" + pq.peek().rank);
                   pq.remove();
             }
       }
