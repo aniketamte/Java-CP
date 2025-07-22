@@ -11,6 +11,9 @@ public class WrapperExample {
 
             //When a non primitive is final, it can't be reassigned
             // aniket = new A("New Object");
+
+            A obj = new A("Airtel");
+            System.out.println(obj.toString());
       }
 
       static void swap(Integer a, Integer b) {
@@ -29,7 +32,7 @@ class A {
       }
 
     @Override
-    protected void finalize() throws Throwable {
+    protected void finalize(){
         System.out.println("Object is destroyed!");
     }
 }
