@@ -56,6 +56,6 @@ public class Leetcode76 {
             return minWindowSize == Integer.MAX_VALUE ? "" : s.substring(start_i, start_i + minWindowSize);
       }
       public static void main(String[] args) {
-            System.out.println(minWindow("ADOBECODEBANC", "ABC"));
+            System.out.println(minWindow("ADOBECODEBANC", "ABC "));
       }
 }
