@@ -1,6 +1,9 @@
 public class Leetcode28 {
       public static int strStr(String haystack, String needle) {
-            for(int i=0; i<haystack.length(); i++){
+            if (needle.isEmpty()){
+                  return 0; // If needle is empty, return 0
+            }
+            for(int i=0; i< haystack.length() - needle.length(); i++){
                   for(int j=0; j<needle.length(); j++){
                         if(haystack.charAt(i + j) != needle.charAt(j)) {
                               break;
