@@ -53,12 +53,15 @@ public class PreOrder{
             BinaryTree tree = new BinaryTree();
             Node root = tree.buildTree(nodes);
             System.out.println(root.data);
+
             System.out.print("PreOrder: ");
             tree.preOrder(root);
             System.out.println();
+
             System.out.print("PostOrder: ");
             tree.postOrder(root);
             System.out.println();
+            
             System.out.print("InOrder: ");
             tree.inOrder(root);
             System.out.println();
