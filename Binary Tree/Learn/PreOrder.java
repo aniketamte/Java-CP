@@ -22,6 +22,7 @@ public class PreOrder{
                   newNode.right = buildTree(nodes);
                   return newNode;
             }
+
             public static void preOrder(Node root) {
                   if(root == null) {
                         return;
@@ -78,6 +79,18 @@ public class PreOrder{
                         }
                   }
             }
+
+            //Height of the tree
+
+            public static int height(Node root) {
+                  if(root == null) {
+                        return 0;
+                  }
+                  int leftHeight = height(root.left);
+                  int rightHeight = height(root.right);
+                  return Math.max(leftHeight, rightHeight) + 1;
+            }
+
       }
       public static void main(String[] args) {
             int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1,-1};
@@ -100,5 +113,7 @@ public class PreOrder{
             System.out.println("Level Order Traversal:");
             tree.levelOrder(root);
             System.out.println();
+
+            System.out.println("Height of the tree: " + tree.height(root));
       }
 }
