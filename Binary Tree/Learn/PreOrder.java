@@ -91,6 +91,13 @@ public class PreOrder{
                   return Math.max(leftHeight, rightHeight) + 1;
             }
 
+            //count nodes in the tree
+            public static int countNodes(Node root){
+                  if(root == null) {
+                        return 0;
+                  }
+                  return countNodes(root.left) + countNodes(root.right) + 1;
+            }
       }
       public static void main(String[] args) {
             int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1,-1};
@@ -115,5 +122,7 @@ public class PreOrder{
             System.out.println();
 
             System.out.println("Height of the tree: " + tree.height(root));
+
+            System.out.println("Count of nodes in the tree: " + tree.countNodes(root));
       }
 }
