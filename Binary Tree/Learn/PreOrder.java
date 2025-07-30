@@ -1,3 +1,4 @@
+import java.util.*;
 public class PreOrder{
       static class Node {
             int data;
@@ -47,6 +48,36 @@ public class PreOrder{
                   System.out.print(root.data + " ");
                   inOrder(root.right);
             }
+
+            //Level Order traversal --> (BFS)
+
+            public static void levelOrder(Node root){
+                  if(root == null){
+                        return;
+                  }
+                  Queue<Node> queue = new LinkedList<>();
+                  queue.add(root);
+                  queue.add(null); // Level marker
+                  while(!queue.isEmpty()){
+                        Node currentNode = queue.remove();
+                        if(currentNode == null){
+                              System.out.println();
+                              if(!queue.isEmpty()){
+                                    queue.add(null); // Add level marker for next level
+                              } else{
+                                    break; // No more nodes to process
+                              }
+                        } else{
+                              System.out.print(currentNode.data + " ");
+                              if(currentNode.left != null){
+                                    queue.add(currentNode.left);
+                              }
+                              if(currentNode.right != null){
+                                    queue.add(currentNode.right);
+                              }
+                        }
+                  }
+            }
       }
       public static void main(String[] args) {
             int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1,-1};
@@ -64,6 +95,10 @@ public class PreOrder{
             
             System.out.print("InOrder: ");
             tree.inOrder(root);
+            System.out.println();
+
+            System.out.println("Level Order Traversal:");
+            tree.levelOrder(root);
             System.out.println();
       }
 }
