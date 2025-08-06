@@ -15,7 +15,6 @@ public class Leetcode542 {
             Queue<int[]> que = new LinkedList<>();
             for (int i = 0; i < m; i++) {
                   for (int j = 0; j < n; j++) {
-                        A
                         if (mat[i][j] == 0) {
                               result[i][j] = 0;
                               que.offer(new int[] { i, j });
