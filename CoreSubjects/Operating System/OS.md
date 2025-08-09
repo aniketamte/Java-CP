@@ -1,4 +1,3 @@
-Great — thanks for confirming! Based on the **Operating System Notes PDF** you shared, here is a **deep-dive, README.md-friendly version** of the notes with **detailed explanations and real-world examples** for every major concept and algorithm.
 
 ---
 
