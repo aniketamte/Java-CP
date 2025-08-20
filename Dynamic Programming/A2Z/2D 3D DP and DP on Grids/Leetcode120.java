@@ -6,18 +6,29 @@ import java.util.List;
 public class Leetcode120 {
 
     public static int minimumTotal(List<List<Integer>> triangle) {
-        return solve(triangle, 0, 0);
+        int n = triangle.size();
+        int dp[][] = new int[n][n];
+
+        for(int row[] : dp){
+            Arrays.fill(row, -1);
+        }
+        return solve(triangle, 0, 0, dp);
     }
 
-    public static int solve(List<List<Integer>> triangle, int row, int col) {
+    public static int solve(List<List<Integer>> triangle, int row, int col, int dp[][]) {
         int n = triangle.size();
         if (row == n - 1) {
             return triangle.get(row).get(col);
         }
-        int down = solve(triangle, row + 1, col);
-        int diagonal = solve(triangle, row + 1, col + 1);
 
-        return triangle.get(row).get(col) + Math.min(down, diagonal);
+        if(dp[row][col] != -1){
+            return dp[row][col];
+        }
+        int down = solve(triangle, row + 1, col, dp);
+        int diagonal = solve(triangle, row + 1, col + 1, dp);
+
+        dp[row][col] = triangle.get(row).get(col) + Math.min(down, diagonal);
+        return dp[row][col];
     }
 
     public static void main(String[] args) {
