@@ -2,7 +2,7 @@
 public class Leetcode79 {
 
     // Function to check if the word exists in the board
-    public static boolean exist(char[][] board, String word) {
+    public static boolean exist (char[][] board, String word) {
         int m = board.length;
         int n = board[0].length;
 
