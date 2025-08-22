@@ -1350,3 +1350,131 @@ So even though RAM is small, the program **runs as if all 5 pages are in memory*
 
 ---
 
+Great 👍 Let’s now go into **“9. Page Replacement Algorithms”** in a very simple but detailed way with real-world examples.
+
+---
+
+# 📄 9. Page Replacement Algorithms
+
+---
+
+## 🧠 Why Do We Need Page Replacement?
+
+* In **Virtual Memory**, programs are divided into **pages**.
+* RAM (physical memory) is divided into **frames**.
+* When RAM is **full** and a new page is needed → OS must **replace (remove)** one page from RAM to load the new one.
+
+👉 Question: **Which page should we replace?**
+Answer: The OS uses **Page Replacement Algorithms** to decide.
+
+---
+
+## 📖 Real-Life Analogy
+
+Think of your **study desk (RAM)**:
+
+* It can only hold 3 books at a time.
+* If you need a new book but the desk is full → You must **remove one book** to make space.
+* Which book do you remove?
+
+  * The oldest one?
+  * The one you don’t need soon?
+  * The one you haven’t touched for a long time?
+
+That’s exactly how page replacement works.
+
+---
+
+## 🛠 Common Page Replacement Algorithms
+
+---
+
+### 1️⃣ First In First Out (FIFO)
+
+* Replace the **oldest page** (the one that entered first).
+* Like a **queue**: first book placed on desk is the first removed.
+
+📖 Example:
+RAM can hold 3 pages.
+Reference string (pages requested): 1, 2, 3, 4
+
+* Load 1, 2, 3 → RAM = \[1,2,3]
+* Need 4 → Remove 1 (oldest) → RAM = \[4,2,3]
+
+✅ Simple
+❌ May cause **Belady’s Anomaly**: more frames can give **more** page faults (unexpected).
+
+---
+
+### 2️⃣ Optimal Page Replacement (OPT)
+
+* Replace the page that will **not be used for the longest time in future**.
+* Like removing the book you won’t need for many days.
+
+📖 Example:
+Reference string: 7, 0, 1, 2, 0, 3, 0, 4
+
+* If RAM is full, replace the page that will not be needed soon.
+
+✅ Best performance, **minimum page faults**
+❌ Not possible in real life (we can’t see the future), used only as **theoretical benchmark**.
+
+---
+
+### 3️⃣ Least Recently Used (LRU)
+
+* Replace the page that was **not used for the longest time in the past**.
+* Like removing the book you haven’t touched in weeks.
+
+📖 Example:
+Reference string: 7, 0, 1, 2, 0, 3
+
+* If RAM is full, remove the page that was least recently used.
+
+✅ More practical than OPT
+❌ Requires tracking usage (can be costly for hardware/OS).
+
+---
+
+## 📊 Example Comparison
+
+Suppose RAM can hold **3 frames** and reference string is:
+`1, 3, 0, 3, 5, 6`
+
+* **FIFO**: Replace oldest → 5 page faults
+* **OPT**: Replace future-unused → 4 page faults
+* **LRU**: Replace least recently used → 4 page faults
+
+👉 Optimal gives lowest page faults, LRU is close to optimal, FIFO is worst in many cases.
+
+---
+
+## 📌 Belady’s Anomaly
+
+* In **FIFO**, sometimes increasing RAM **increases page faults** (unexpected).
+* Example: Reference string (3, 2, 1, 0, 3, 2, 4, 3, 2, 1, 0, 4)
+
+  * With 3 frames → 9 page faults
+  * With 4 frames → 10 page faults
+
+---
+
+## ✅ Summary Table
+
+| Algorithm | Idea                        | Example              | Pros             | Cons             |
+| --------- | --------------------------- | -------------------- | ---------------- | ---------------- |
+| FIFO      | Replace oldest              | Queue of books       | Simple           | Belady’s anomaly |
+| OPT       | Replace farthest future use | Book not needed soon | Theoretical best | Not practical    |
+| LRU       | Replace least recently used | Book unused longest  | Close to optimal | Costly to track  |
+
+---
+
+## 🧩 Key Takeaway
+
+* When RAM is full → we must **replace** a page.
+* **FIFO**: simplest, but not efficient.
+* **OPT**: best, but not practical.
+* **LRU**: best practical choice.
+
+---
+
