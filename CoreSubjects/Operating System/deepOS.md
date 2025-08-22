@@ -1478,3 +1478,153 @@ Suppose RAM can hold **3 frames** and reference string is:
 
 ---
 
+Perfect 👍 Let’s now go into **“10. Disk Scheduling Algorithms”** in **simple but detailed language** with real-world examples.
+
+---
+
+# 💽 10. Disk Scheduling Algorithms
+
+---
+
+## 🧠 Why Do We Need Disk Scheduling?
+
+When many processes request data from the **hard disk**, the OS must decide **which request to serve first**.
+
+👉 Because disk operations (seek time + rotation + transfer) are **slow compared to CPU**, the order of servicing matters a lot.
+
+Efficient **disk scheduling** reduces:
+
+* **Seek Time** → Time to move disk arm to track.
+* **Rotational Latency** → Time for sector to rotate under read head.
+* **Transfer Time** → Time to transfer data.
+
+---
+
+## 📖 Real-Life Analogy
+
+Think of a **lift (elevator)** in a building:
+
+* People press buttons on different floors (disk requests).
+* Lift must decide which floor to visit next.
+* If it serves floors **in the right order**, everyone gets faster service.
+* If it serves **randomly**, total time wasted.
+
+---
+
+## 🛠 Disk Scheduling Algorithms
+
+---
+
+### 1️⃣ First Come First Serve (FCFS)
+
+* Serve requests in the order they arrive.
+* Like a **queue at a shop**.
+
+📖 Example:
+Requests = \[82, 170, 43, 140, 24]
+Head starts at 50 → Serve 82 → then 170 → then 43 → …
+
+✅ Simple, fair.
+❌ Not always efficient → long seek time.
+
+---
+
+### 2️⃣ Shortest Seek Time First (SSTF)
+
+* Pick the request **closest to current head position**.
+* Like helping the person standing **nearest to you** first.
+
+📖 Example:
+Requests = \[82, 170, 43, 140, 24], Head = 50
+Closest = 43 → then 24 → then 82 → 140 → 170
+
+✅ Less movement than FCFS.
+❌ Can cause **starvation** (far requests may wait forever).
+
+---
+
+### 3️⃣ SCAN (Elevator Algorithm)
+
+* Disk arm moves like an **elevator**:
+
+  * Goes in one direction, serving requests along the way.
+  * When it reaches the end, it **reverses direction**.
+
+📖 Example:
+Head = 50, requests on both sides.
+Moves → 24 → 43 → 82 → 140 → 170, then reverses.
+
+✅ Fair and reduces total movement.
+❌ End requests wait longer.
+
+---
+
+### 4️⃣ CSCAN (Circular SCAN)
+
+* Like SCAN, but when head reaches end, it **jumps to beginning** and moves forward again.
+* Does **not serve requests while moving back**.
+
+📖 Example:
+Head moves right, serves requests, then jumps back left **without serving**, then continues.
+
+✅ Provides **uniform wait time**.
+❌ Jump causes overhead.
+
+---
+
+### 5️⃣ LOOK
+
+* Similar to SCAN, but head **doesn’t go till end of disk**.
+* It only goes until the **last request** in that direction, then reverses.
+
+📌 Example:
+If last request on right is at 170 (not 199, end of disk), it stops at 170, then turns back.
+
+✅ Saves unnecessary movement.
+
+---
+
+### 6️⃣ CLOOK (Circular LOOK)
+
+* Similar to CSCAN, but head goes only **till last request** in one direction, then jumps back.
+
+📖 Example:
+If last request is at 170, it jumps back to 24, then continues forward.
+
+✅ Better than CSCAN (no useless movement to end).
+
+---
+
+## 📊 Comparison Table
+
+| Algorithm | Working                        | Analogy                       | Pros                | Cons                     |
+| --------- | ------------------------------ | ----------------------------- | ------------------- | ------------------------ |
+| **FCFS**  | Serve in arrival order         | Queue in shop                 | Simple, fair        | High seek time           |
+| **SSTF**  | Nearest request first          | Help nearest person           | Efficient           | Starvation               |
+| **SCAN**  | Elevator movement              | Lift stops at each floor      | Fair                | End requests wait longer |
+| **CSCAN** | Circular scan                  | Lift goes only one way        | Uniform wait        | Jump overhead            |
+| **LOOK**  | SCAN but stops at last request | Lift stops at last person     | Efficient           | Some wait longer         |
+| **CLOOK** | Circular LOOK                  | Lift jumps after last request | Uniform & efficient | Jump overhead            |
+
+---
+
+## 🧾 Example (Head at 50, Requests = \[24, 43, 82, 140, 170])
+
+* **FCFS** → 50 → 82 → 170 → 43 → 140 → 24
+* **SSTF** → 50 → 43 → 24 → 82 → 140 → 170
+* **SCAN** → 50 → 43 → 24 → (to end) → 82 → 140 → 170
+* **CSCAN** → 50 → 82 → 140 → 170 → (jump) → 24 → 43
+* **LOOK** → 50 → 43 → 24 → 82 → 140 → 170 (stop at 170, reverse)
+* **CLOOK** → 50 → 82 → 140 → 170 → (jump) → 24 → 43
+
+---
+
+## ✅ Key Takeaway
+
+* **FCFS** = Fair but slow.
+* **SSTF** = Fast but risk of starvation.
+* **SCAN/LOOK** = Good for heavy loads (like elevators).
+* **CSCAN/CLOOK** = Best for uniform performance.
+
+---
+
