@@ -267,3 +267,164 @@ Relationships  columns)         + methods)
 
 ---
 
+Perfect 👍 Let’s expand this into a **detailed explanation** with examples and a clean breakdown.
+
+---
+
+## 📌 **Database Languages**
+
+A **Database Language** is a set of commands used to **define, manipulate, and manage** data in a database.
+
+👉 Almost all modern DBMS (MySQL, Oracle, PostgreSQL, SQL Server) use **SQL (Structured Query Language)** which combines both **DDL** and **DML**.
+
+---
+
+### 🔷 **1. Data Definition Language (DDL)**
+
+**Definition:**
+DDL is used to **define and modify the structure (schema) of the database**.
+
+👉 It deals with **tables, indexes, constraints, views**, etc.
+
+---
+
+#### ✅ **Common DDL Commands:**
+
+1. **CREATE** → Create new tables or databases
+
+   ```sql
+   CREATE TABLE Student (
+     ID INT PRIMARY KEY,
+     Name VARCHAR(50),
+     Age INT
+   );
+   ```
+
+2. **ALTER** → Modify an existing table
+
+   ```sql
+   ALTER TABLE Student ADD COLUMN Course VARCHAR(30);
+   ```
+
+3. **DROP** → Delete a table or database
+
+   ```sql
+   DROP TABLE Student;
+   ```
+
+4. **TRUNCATE** → Remove all data from a table (but keep structure)
+
+   ```sql
+   TRUNCATE TABLE Student;
+   ```
+
+---
+
+#### ✅ **Consistency Constraints in DDL**
+
+When defining schema, we can add rules that must always be true.
+These are called **constraints**.
+
+* **NOT NULL** → Value cannot be empty
+* **UNIQUE** → Value must be unique
+* **PRIMARY KEY** → Uniquely identifies each row
+* **FOREIGN KEY** → Links two tables
+* **CHECK** → Ensures a condition
+* **DEFAULT** → Assigns a default value
+
+**Example:**
+
+```sql
+CREATE TABLE Student (
+  ID INT PRIMARY KEY,
+  Name VARCHAR(50) NOT NULL,
+  Age INT CHECK (Age >= 18)
+);
+```
+
+---
+
+### 🔷 **2. Data Manipulation Language (DML)**
+
+**Definition:**
+DML is used to **work with actual data** inside the database.
+
+👉 It allows **retrieval, insertion, deletion, and updating** of data.
+
+---
+
+#### ✅ **Types of DML Operations:**
+
+1. **Retrieve data** (Read)
+
+   ```sql
+   SELECT * FROM Student;
+   ```
+
+2. **Insert new data**
+
+   ```sql
+   INSERT INTO Student (ID, Name, Age, Course)
+   VALUES (101, 'Aniket', 22, 'DBMS');
+   ```
+
+3. **Delete data**
+
+   ```sql
+   DELETE FROM Student WHERE ID = 101;
+   ```
+
+4. **Update existing data**
+
+   ```sql
+   UPDATE Student
+   SET Age = 23
+   WHERE ID = 101;
+   ```
+
+---
+
+#### ✅ **Query Language (Part of DML):**
+
+* A **query** is a request to retrieve specific data.
+* Uses `SELECT` statement.
+
+**Example:**
+Get all students enrolled in DBMS course:
+
+```sql
+SELECT Name, Age FROM Student WHERE Course = 'DBMS';
+```
+
+---
+
+### 🔷 **3. SQL = DDL + DML**
+
+* SQL is the **standard database language**.
+* It combines:
+
+  * **DDL** → For schema definition
+  * **DML** → For data operations
+
+👉 That’s why in practice, we don’t need two separate languages.
+
+---
+
+### ✅ **Quick Summary Table**
+
+| Type    | Purpose                       | Example Commands                       |
+| ------- | ----------------------------- | -------------------------------------- |
+| **DDL** | Defines structure of database | `CREATE`, `ALTER`, `DROP`, `TRUNCATE`  |
+| **DML** | Works with data (CRUD ops)    | `SELECT`, `INSERT`, `UPDATE`, `DELETE` |
+| **SQL** | Combines both                 | Used in MySQL, Oracle, PostgreSQL      |
+
+---
+
+### 🎯 In Simple Words:
+
+* **DDL** → Like designing the blueprint of a house (walls, rooms).
+* **DML** → Like living inside the house (adding furniture, updating items, removing things).
+* **SQL** → The full package — allows both designing and managing data.
+
+---
+
