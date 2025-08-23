@@ -244,3 +244,80 @@ A **Weak Entity** is an entity that **cannot be uniquely identified by its own a
 
 ---
 
+Perfect! Let’s dive into **Entity Set**.
+
+---
+
+## **4️⃣ Entity Set**
+
+### **Definition:**
+
+An **Entity Set** is a **collection of entities of the same type** that **share the same attributes**.
+
+* Think of it as a **group or table** in a database.
+* Each member of the entity set is an **instance of the entity**.
+
+---
+
+### **Key Points:**
+
+1. Represents **all entities of a particular type**.
+2. Each entity in the set has the **same attributes**, but the **values differ**.
+3. Helps organize entities in **logical groups** for database design.
+
+---
+
+### **Examples:**
+
+#### **1. Student Entity Set**
+
+* **Entity:** Student
+* **Attributes:** Student\_ID, Name, Standard, Course, Batch, Contact Number, Address
+* **Entity Set:** All students in a college.
+
+  * Each row in the set represents **one student**.
+
+#### **2. Bank Customer Entity Set**
+
+* **Entity:** Customer
+* **Attributes:** Customer\_ID, Name, Account Number, Balance
+* **Entity Set:** All customers of a bank.
+
+---
+
+### **Real-Life Analogy:**
+
+* Think of a **classroom**:
+
+  * Each **student** = entity
+  * All students in **class 10** = entity set
+* Think of a **library**:
+
+  * Each **book** = entity
+  * All books in the library = entity set
+
+---
+
+### **Placement Tip:**
+
+* Interview question:
+  *“What is an entity set?”*
+
+  * Answer: “An entity set is a **collection of similar entities** that share the same attributes. For example, all students in a college form the Student entity set.”
+
+* Another question:
+  *“Difference between entity and entity set?”*
+
+  * Entity = one object (one student)
+  * Entity Set = group of objects (all students)
+
+---
+
+✅ **Summary:**
+
+* **Entity** = single object (e.g., a student)
+* **Entity Set** = collection of entities (e.g., all students in the college)
+* Makes it easier to organize and manage **real-world objects** in a database.
+
+---
+
