@@ -756,3 +756,109 @@ Think of the database as a **school**:
 
 ---
 
+Perfect 👍 You shared the diagram of **DBMS Application Architectures**. Let’s go step by step and explain this in **easy language with examples**.
+
+---
+
+## 📌 **DBMS Application Architectures**
+
+In any DBMS-based system, we usually have two types of machines:
+
+1. **Client machines** → Where the **user works** (front-end).
+2. **Server machines** → Where the **database system runs** (back-end).
+
+The way these two interact gives us different **architectures**.
+
+---
+
+### 🔷 **a. T1 (Single-Tier) Architecture**
+
+* **Everything is on one machine** → client, application, and database.
+* No real separation between client & server.
+
+👉 **Example:**
+
+* Microsoft Access installed on your personal laptop.
+* Both the database and application are in the same system.
+
+✅ **Best for:** Small systems or learning.
+
+---
+
+### 🔷 **b. T2 (Two-Tier) Architecture**
+
+* Application is split into **two parts**:
+
+  1. **Client machine** → runs the application (front-end).
+  2. **Server machine** → runs the database (back-end).
+* The client **directly sends SQL queries** to the database server using APIs like **ODBC/JDBC**.
+
+👉 **Example:**
+
+* A payroll software installed on employee PCs.
+* When they request “salary details,” the request goes **directly** to the database server.
+
+✅ **Good for:** Small to medium organizations.
+
+⚠️ **Problem:**
+
+* If many clients directly query DB, it puts heavy load on server.
+* Less secure (client can access DB directly).
+
+---
+
+### 🔷 **c. T3 (Three-Tier) Architecture**
+
+* Application is split into **three parts**:
+
+  1. **Client machine** → Only **frontend (UI)**.
+  2. **Application Server (Middle Layer)** → Contains **business logic** (rules/decisions).
+  3. **Database Server** → Stores data.
+* Client **never talks directly to DB**.
+* Client → Application Server → Database Server.
+
+👉 **Example:**
+
+* A banking web app:
+
+  * Client (Browser) → Application Server (Bank’s server with logic: “if balance < 0 → reject”) → Database Server (stores accounts).
+
+✅ **Advantages:**
+
+1. **Scalability** → Many servers can handle load.
+2. **Security** → Client cannot directly touch database.
+3. **Data Integrity** → App server ensures valid updates.
+4. **Best for Web Applications** (like Amazon, Banking, Social Media).
+
+---
+
+### 🔷 **Diagram Recap (from your image)**
+
+```
+a) Two-Tier
+User → Application → Database System
+
+b) Three-Tier
+User → Application Client → Application Server → Database System
+```
+
+---
+
+### ✅ **Quick Comparison Table**
+
+| Architecture         | Layers                       | Example                          | Pros                       | Cons                       |
+| -------------------- | ---------------------------- | -------------------------------- | -------------------------- | -------------------------- |
+| **T1** (Single-tier) | 1 (All in one)               | MS Access on laptop              | Simple                     | Not scalable               |
+| **T2** (Two-tier)    | 2 (Client + DB)              | Payroll software with DB server  | Faster than T1             | Less secure, heavy DB load |
+| **T3** (Three-tier)  | 3 (Client + App Server + DB) | Banking website, E-commerce apps | Secure, Scalable, Reliable | More complex setup         |
+
+---
+
+👉 **In Simple Words:**
+
+* **T1** → All-in-one system.
+* **T2** → Client talks directly to DB.
+* **T3** → Client talks to App Server, then App Server talks to DB (more secure & scalable).
+
+---
+
