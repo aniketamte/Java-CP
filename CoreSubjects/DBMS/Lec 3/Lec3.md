@@ -321,3 +321,119 @@ An **Entity Set** is a **collection of entities of the same type** that **share 
 
 ---
 
+Great! Let’s dive into **Attributes**.
+
+---
+
+## **5️⃣ Attributes**
+
+### **Definition:**
+
+An **attribute** is a **property or characteristic of an entity**.
+
+* It defines **what information is stored** about an entity.
+* Every entity has **one or more attributes**.
+
+---
+
+### **Key Points:**
+
+1. **Attributes hold values** for each entity.
+2. Each attribute has a **domain** – the set of allowed values.
+
+   * Example: Age → integers between 0–120
+   * Student Name → string
+
+---
+
+### **Example: Student Entity**
+
+* **Entity:** Student
+
+* **Attributes:**
+
+  * Student\_ID
+  * Name
+  * Standard
+  * Course
+  * Batch
+  * Contact Number
+  * Address
+
+* Each student has a **specific value** for each attribute.
+
+---
+
+### **Types of Attributes**
+
+1. **Simple Attribute**
+
+   * Cannot be divided further.
+   * Example: Roll number, Account number
+
+2. **Composite Attribute**
+
+   * Can be divided into smaller sub-parts.
+   * Example: Name → First Name, Middle Name, Last Name
+   * Address → Street, City, State, PIN
+
+3. **Single-valued Attribute**
+
+   * Holds **only one value**.
+   * Example: Student\_ID, Loan\_Number
+
+4. **Multi-valued Attribute**
+
+   * Holds **multiple values**.
+   * Example: Phone numbers, Nominee names, Dependent names
+   * Limits can be applied (upper/lower limit)
+
+5. **Derived Attribute**
+
+   * Value can be **calculated from other attributes**.
+   * Example: Age from Date of Birth, Loan Age from Loan Date
+
+6. **NULL Value**
+
+   * Attribute has **no value**.
+   * Can mean:
+
+     1. Not applicable → e.g., Middle name may not exist
+     2. Unknown → e.g., Salary not known yet
+
+---
+
+### **Real-Life Examples:**
+
+* **Library Management System:**
+
+  * Book entity → Attributes: Book\_ID, Title, Author, Published\_Year
+  * Member entity → Attributes: Member\_ID, Name, Contact Number
+
+* **Banking System:**
+
+  * Customer entity → Attributes: Customer\_ID, Name, Address, Multiple Phone Numbers (multi-valued)
+
+---
+
+### **Placement Tip:**
+
+* Interviewers often ask:
+
+  1. *“What is an attribute?”*
+
+     * Answer: “An attribute is a property or characteristic of an entity, like Name, ID, or Address of a Student.”
+  2. *“What are types of attributes?”*
+
+     * Be ready to explain **Simple, Composite, Single-valued, Multi-valued, Derived, and NULL attributes** with examples.
+
+---
+
+✅ **Summary:**
+
+* Attributes define **what information is stored** for entities
+* Can be **simple, composite, single/multi-valued, derived, or NULL**
+* Critical for **database design** because they form the columns in tables.
+
+---
+
