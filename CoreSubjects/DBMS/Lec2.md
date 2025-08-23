@@ -862,3 +862,63 @@ User → Application Client → Application Server → Database System
 
 ---
 
+Perfect 👍 Let’s create a **text-based mind map** for both **Three-Schema Architecture** and **DBMS Application Architectures (T1, T2, T3)** so you can quickly revise them.
+
+---
+
+# 🧠 **Mind Map: Three-Schema Architecture (View of Data)**
+
+```
+                ┌───────────────────────────┐
+                │  Three-Schema Architecture │
+                └─────────────┬─────────────┘
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        │                     │                     │
+  External Level         Conceptual Level       Internal Level
+ (View Schema)          (Logical Schema)       (Physical Schema)
+        │                     │                     │
+        ▼                     ▼                     ▼
+  - User views          - Entire DB design     - How data is stored
+  - Security            - Tables, attributes   - Indexes, hashing
+  - Subschemas          - Relationships        - Storage format
+  - Personalized view   - Used by DBA/devs     - Efficiency focused
+```
+
+✅ **Keywords to remember**
+
+* **External** → What users see (views)
+* **Conceptual** → What DB looks like (structure)
+* **Internal** → How data is stored (physical)
+
+---
+
+# 🧠 **Mind Map: DBMS Application Architectures**
+
+```
+                ┌───────────────────────────────┐
+                │  DBMS Application Architectures │
+                └───────────────┬───────────────┘
+                                │
+          ┌─────────────────────┼─────────────────────┐
+          │                     │                     │
+       T1 (Single-tier)     T2 (Two-tier)        T3 (Three-tier)
+          │                     │                     │
+          ▼                     ▼                     ▼
+  - All in one machine    - Client + DB server   - Client + App server + DB
+  - Simple                - SQL via ODBC/JDBC    - Client never talks to DB
+  - Example: MS Access    - Example: Payroll     - Example: Banking website
+  - Not scalable          - Faster than T1       - Highly secure, scalable
+                          - Issues: Security,    - Middle layer = business logic
+                            heavy DB load        - Best for web apps
+```
+
+✅ **Keywords to remember**
+
+* **T1** → All in one (local machine)
+* **T2** → Client ↔ DB (direct)
+* **T3** → Client ↔ App Server ↔ DB (secure + scalable)
+
+---
+
+Would you like me to also **draw this mind map into a clean diagram image** (like flowcharts with boxes & arrows) so it looks more visual for your notes?
