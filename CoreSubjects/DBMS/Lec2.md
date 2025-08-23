@@ -428,3 +428,123 @@ SELECT Name, Age FROM Student WHERE Course = 'DBMS';
 
 ---
 
+Great 👍 Let’s go step by step and explain this in **simple language with real-life examples**.
+
+---
+
+## 📌 **5. How is Database Accessed from Application Programs?**
+
+---
+
+### 🔷 **1. The Need**
+
+* Databases don’t work alone — they are always used **inside applications** (like banking systems, e-commerce apps, social media apps).
+* Applications are written in **host languages** like **C, C++, Java, Python, PHP**.
+* These programs need a way to **talk to the database** → to **store** and **fetch data**.
+
+---
+
+### 🔷 **2. How It Works**
+
+Applications connect to the database using **APIs (Application Programming Interfaces)**.
+
+👉 API = A **bridge** that lets a program send queries (DDL/DML) to the database and get results back.
+
+---
+
+### 🔷 **3. Example: Banking System**
+
+Imagine a **banking app**:
+
+* A payroll module is written in **Java**.
+* It needs to:
+
+  * Retrieve employee salaries (`SELECT`)
+  * Update balances (`UPDATE`)
+  * Insert new transaction records (`INSERT`)
+
+All of these are **DML commands** written **inside the Java code** and executed on the database.
+
+---
+
+### 🔷 **4. APIs for Database Access**
+
+There are standard APIs available depending on the host language:
+
+#### ✅ a) **ODBC (Open Database Connectivity)**
+
+* Developed by Microsoft.
+* Works with **C, C++**, and many other languages.
+* Provides a **universal way** to connect any database (MySQL, SQL Server, Oracle, etc.) without worrying about their internal details.
+
+---
+
+#### ✅ b) **JDBC (Java Database Connectivity)**
+
+* Specially designed for **Java** applications.
+* Provides classes and methods to:
+
+  * Connect to DB
+  * Execute queries
+  * Retrieve results
+
+**Example (Java with JDBC):**
+
+```java
+// 1. Import JDBC package
+import java.sql.*;
+
+class DBExample {
+  public static void main(String args[]) {
+    try {
+      // 2. Connect to database
+      Connection con = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/school", "root", "password");
+
+      // 3. Create a statement
+      Statement stmt = con.createStatement();
+
+      // 4. Execute query
+      ResultSet rs = stmt.executeQuery("SELECT * FROM Student");
+
+      // 5. Display result
+      while(rs.next()) {
+        System.out.println(rs.getInt(1) + " " + rs.getString(2));
+      }
+
+      // 6. Close connection
+      con.close();
+    } catch(Exception e) { System.out.println(e); }
+  }
+}
+```
+
+---
+
+### 🔷 **5. Flow of Application ↔ Database Communication**
+
+```
+Application (Java/C++)
+        │
+        ▼
+   API (JDBC / ODBC)
+        │
+        ▼
+   DBMS (MySQL, Oracle, etc.)
+        │
+        ▼
+    Database Tables
+```
+
+---
+
+### ✅ **Quick Summary**
+
+* Applications are written in **host languages** like C, C++, Java.
+* They **send SQL commands** (DDL/DML) to the database using an **API**.
+* **ODBC** → for C/C++ (Microsoft standard).
+* **JDBC** → for Java programs.
+* This allows apps (like banking, e-commerce, or payroll systems) to interact with the database easily.
+
+---
+
