@@ -39,6 +39,33 @@ public class Leetcode122 {
         return solve(0, 1, prices, dp); // start with buy allowed
     }
 
+    //Bottom - up Approach
+
+    public static int maxProfit2(int prices[]){
+        int n = prices.length;
+        int dp[][] = new int[n+1][2];
+
+        for(int index=n-1; index>=0; index--){
+            for(int buy=0; buy<=1; buy++){
+                  int profit = 0;
+
+                if (buy == 1) {
+                    int buyKaro = -prices[index] + dp[index+1][0];
+                    int skipKaro = 0 + dp[index + 1][1];
+                    profit = Math.max(buyKaro, skipKaro);
+                } else {
+                    int sellKaro = prices[index] + dp[index + 1][1];
+                    int skipKaro = 0 + dp[index + 1][0];
+                    profit = Math.max(sellKaro, skipKaro);
+                }
+
+                // ✅ store in dp before returning
+                dp[index][buy] = profit;
+            }
+        }
+        return dp[0][1];
+    }
+
     public static void main(String[] args) {
         int prices[] = {7, 1, 5, 3, 6, 4};
         System.out.println(maxProfit(prices));
