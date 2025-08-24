@@ -61,8 +61,29 @@ public class Leetcode1493 {
       return maxLength;
     }
 
+    //Better Sliding Window Approach
+    public static int longestSubarray3(int[] nums){
+      int last_zero_index = -1;
+      int result = 0;
+
+      int i = 0;
+      int j = 0;
+
+      while(j < nums.length){
+            if(nums[j] == 0){
+                  i = last_zero_index + 1;
+                  last_zero_index = j;
+            }
+            result = Math.max(result, j-i);
+            j++;
+      }
+      return result;
+    }
+
     public static void main(String[] args) {
       int nums[] = {1, 1, 0, 1};
       System.out.println(longestSubarray(nums));
+      System.out.println(longestSubarray2(nums));
+      System.out.println(longestSubarray3(nums));
     }
 }
