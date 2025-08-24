@@ -19,7 +19,7 @@ public class Leetcode123 {
             int skip_karo = 0 + solve(index + 1, 0, prices, limit, dp);
             profit = Math.max(sell_karo, skip_karo);
         }
-        return profit;
+        return dp[index][buy][limit] = profit;
     }
 
     public static int maxProfit(int[] prices) {
