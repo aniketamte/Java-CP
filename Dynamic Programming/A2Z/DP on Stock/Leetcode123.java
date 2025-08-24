@@ -9,6 +9,9 @@ public class Leetcode123 {
         if (limit == 0) {
             return 0;
         }
+        if(dp[index][buy][limit] != -1){
+            return dp[index][buy][limit];
+        }
         int profit = 0;
         if (buy == 1) {
             int buy_karo = -prices[index] + solve(index + 1, 0, prices, limit, dp);
