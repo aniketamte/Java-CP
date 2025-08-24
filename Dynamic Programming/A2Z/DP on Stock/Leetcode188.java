@@ -1,5 +1,5 @@
 public class Leetcode188 {
-    public static int solve(int index, int operationNo, int k, int prices[]) {
+    public static int solve(int index, int operationNo, int k, int prices[], int dp[][]) {
         if (index == prices.length) {
             return 0;
         }
@@ -8,22 +8,34 @@ public class Leetcode188 {
             return 0;
         }
 
+        if (dp[index][operationNo] != -1) {
+            return dp[index][operationNo];
+        }
+
         int profit = 0;
 
         if (operationNo % 2 == 0) {
-            int buy_karo = -prices[index] + solve(index + 1, operationNo + 1, k, prices);
-            int skip_karo = 0 + solve(index + 1, operationNo, k, prices);
+            int buy_karo = -prices[index] + solve(index + 1, operationNo + 1, k, prices, dp);
+            int skip_karo = 0 + solve(index + 1, operationNo, k, prices, dp);
             profit = Math.max(buy_karo, skip_karo);
         } else {
-            int sell_karo = prices[index] + solve(index + 1, operationNo + 1, k, prices);
-            int skip_karo = 0 + solve(index + 1, operationNo, k, prices);
+            int sell_karo = prices[index] + solve(index + 1, operationNo + 1, k, prices, dp);
+            int skip_karo = 0 + solve(index + 1, operationNo, k, prices, dp);
             profit = Math.max(sell_karo, skip_karo);
         }
-        return profit;
+        return dp[index][operationNo] = profit;
     }
 
     public static int maxProfit(int k, int[] prices) {
-        return solve(0, 0, k, prices);
+        int n = prices.length;
+        int dp[][] = new int[n][2 * k];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < 2 * k; j++) {
+                dp[i][j] = -1;
+            }
+        }
+
+        return solve(0, 0, k, prices, dp);
     }
 
     public static void main(String[] args) {
