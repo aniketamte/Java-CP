@@ -140,3 +140,132 @@ HAVING COUNT(EmpID) >= 2 AND AVG(Salary) > 50000;
 
 ---
 
+Perfect! Let’s create **one complete, placement-ready SQL example** using **`GROUP BY`**, **aggregate functions**, **`HAVING`**, **`ORDER BY`**, and **`LIMIT`** together with **10 rows of Employee table**. I’ll explain everything step by step.
+
+---
+
+# SQL HAVING Clause – Full Example
+
+## 1. Employee Table (10 Rows)
+
+```sql
+CREATE TABLE Employee (
+    EmpID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Department VARCHAR(50),
+    Salary DECIMAL(10,2),
+    JoiningDate DATE
+);
+
+INSERT INTO Employee (EmpID, Name, Department, Salary, JoiningDate)
+VALUES 
+(1, 'Amit Sharma', 'IT', 55000, '2023-06-15'),
+(2, 'Riya Singh', 'HR', 48000, '2022-11-20'),
+(3, 'Vikram Patel', 'IT', 60000, '2021-09-10'),
+(4, 'Sana Khan', NULL, 45000, '2024-01-05'),
+(5, 'Karan Mehta', 'Finance', 70000, '2020-03-12'),
+(6, 'Anita Roy', 'HR', 52000, '2023-02-18'),
+(7, 'Rahul Verma', 'IT', 53000, '2022-05-30'),
+(8, 'Priya Sharma', 'Finance', 65000, '2021-12-11'),
+(9, 'Neha Gupta', 'HR', 47000, '2023-08-01'),
+(10, 'Aditya Singh', 'IT', 58000, '2022-10-22');
+```
+
+---
+
+## 2. Complete HAVING Example Query
+
+**Goal:**
+
+* Group employees by **Department**
+* Show **employee count, average salary, max & min salary**
+* Only include departments where **average salary > 50000**
+* Sort by **average salary descending**
+* Return **top 2 departments only**
+
+```sql
+SELECT 
+    Department,
+    COUNT(EmpID) AS EmployeeCount,
+    AVG(Salary) AS AvgSalary,
+    MAX(Salary) AS HighestSalary,
+    MIN(Salary) AS LowestSalary
+FROM Employee
+WHERE Department IS NOT NULL
+GROUP BY Department
+HAVING AVG(Salary) > 50000
+ORDER BY AvgSalary DESC
+LIMIT 2;
+```
+
+---
+
+## 3. Step-by-Step Explanation
+
+1. **`WHERE Department IS NOT NULL`**
+
+   * Excludes employees without a department (like Sana Khan).
+
+2. **`GROUP BY Department`**
+
+   * Groups employees by their department (`IT`, `HR`, `Finance`).
+
+3. **Aggregate Functions:**
+
+   * `COUNT(EmpID)` → number of employees per department
+   * `AVG(Salary)` → average salary per department
+   * `MAX(Salary)` → highest salary per department
+   * `MIN(Salary)` → lowest salary per department
+
+4. **`HAVING AVG(Salary) > 50000`**
+
+   * Filters groups with average salary greater than 50000
+   * `HAVING` works **after aggregation**, unlike `WHERE`
+
+5. **`ORDER BY AvgSalary DESC`**
+
+   * Sorts grouped results by average salary descending
+
+6. **`LIMIT 2`**
+
+   * Returns **top 2 departments only**
+
+---
+
+## 4. Expected Result
+
+| Department | EmployeeCount | AvgSalary | HighestSalary | LowestSalary |
+| ---------- | ------------- | --------- | ------------- | ------------ |
+| Finance    | 2             | 67500     | 70000         | 65000        |
+| IT         | 4             | 55500     | 60000         | 53000        |
+
+**Explanation:**
+
+* **Finance:** 2 employees, average 67500
+* **IT:** 4 employees, average 55500
+* **HR** is excluded because its average salary is 49000 (< 50000)
+
+---
+
+## 5. Real-life Use Case
+
+* HR wants a **department-wise summary report**:
+
+  * Number of employees
+  * Average salary
+  * Salary range (max/min)
+* Can combine with **LIMIT** to display **top N departments** on a dashboard
+
+---
+
+### ✅ Interview Tips
+
+1. `HAVING` filters **aggregated results**, while `WHERE` filters **individual rows**.
+2. Can combine `HAVING` with `GROUP BY`, `ORDER BY`, `LIMIT` for **top-N aggregated insights**.
+3. Common interview questions:
+
+   * Difference between `WHERE` and `HAVING`
+   * Explain why aggregate functions cannot be used in `WHERE`
+
+---
+
