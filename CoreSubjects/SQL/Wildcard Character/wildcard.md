@@ -212,5 +212,3 @@ WHERE Department IN ('IT','HR')        -- IT or HR
   * Difference between `BETWEEN` and `>= … AND <= …`
   * Difference between `IN` and multiple `OR` conditions
 
----
-
