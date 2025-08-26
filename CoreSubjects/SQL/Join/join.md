@@ -1189,3 +1189,185 @@ WHERE Salary > (
 
 ---
 
+![alt text](image-13.png)
+
+---
+
+Perfect! Let’s discuss **MySQL Views** in detail with **examples, real-life scenarios, and interview-oriented explanation**.
+
+---
+
+# MySQL Views
+
+A **View** is a **virtual table** in MySQL.
+
+* It does **not store data physically**.
+* It is created using a **SELECT query** and can be treated like a table in queries.
+* Views are useful for:
+
+  * Simplifying complex queries
+  * Hiding sensitive columns
+  * Reusing queries
+
+---
+
+## 1. **Syntax**
+
+```sql
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+```
+
+* **To use the view:**
+
+```sql
+SELECT * FROM view_name;
+```
+
+* **To update a view:**
+
+```sql
+CREATE OR REPLACE VIEW view_name AS
+SELECT ...;
+```
+
+* **To delete a view:**
+
+```sql
+DROP VIEW view_name;
+```
+
+---
+
+## 2. **Example Tables**
+
+### Employee Table
+
+| EmpID | Name         | DeptID | Salary |
+| ----- | ------------ | ------ | ------ |
+| 1     | Amit Sharma  | 1      | 55000  |
+| 2     | Riya Singh   | 2      | 48000  |
+| 3     | Vikram Patel | 1      | 60000  |
+| 4     | Sana Khan    | 2      | 45000  |
+| 5     | Karan Mehta  | 3      | 70000  |
+
+### Department Table
+
+| DeptID | DepartmentName |
+| ------ | -------------- |
+| 1      | IT             |
+| 2      | HR             |
+| 3      | Finance        |
+
+---
+
+## 3. **Creating a Simple View**
+
+**Goal:** Create a view to show **employee name, department, and salary**
+
+```sql
+CREATE VIEW EmployeeDetails AS
+SELECT e.Name, d.DepartmentName, e.Salary
+FROM Employee e
+JOIN Department d
+ON e.DeptID = d.DeptID;
+```
+
+**Use the view:**
+
+```sql
+SELECT * FROM EmployeeDetails;
+```
+
+**Result:**
+
+| Name         | DepartmentName | Salary |
+| ------------ | -------------- | ------ |
+| Amit Sharma  | IT             | 55000  |
+| Vikram Patel | IT             | 60000  |
+| Riya Singh   | HR             | 48000  |
+| Sana Khan    | HR             | 45000  |
+| Karan Mehta  | Finance        | 70000  |
+
+**Explanation:**
+
+* View **combines Employee and Department tables**
+* Can be queried like a table
+
+---
+
+## 4. **View with WHERE and ORDER BY**
+
+**Goal:** Show employees in **IT department** only, sorted by salary descending
+
+```sql
+CREATE VIEW IT_Employees AS
+SELECT e.Name, e.Salary
+FROM Employee e
+WHERE e.DeptID = 1
+ORDER BY e.Salary DESC;
+```
+
+**Query the view:**
+
+```sql
+SELECT * FROM IT_Employees;
+```
+
+**Result:**
+
+| Name         | Salary |
+| ------------ | ------ |
+| Vikram Patel | 60000  |
+| Amit Sharma  | 55000  |
+
+---
+
+## 5. **Updating a View**
+
+```sql
+CREATE OR REPLACE VIEW EmployeeDetails AS
+SELECT e.Name, d.DepartmentName, e.Salary
+FROM Employee e
+JOIN Department d
+ON e.DeptID = d.DeptID
+WHERE e.Salary > 50000;
+```
+
+**Explanation:**
+
+* Only shows employees earning **more than 50000**
+
+---
+
+## 6. **Dropping a View**
+
+```sql
+DROP VIEW IT_Employees;
+```
+
+---
+
+## 7. **Real-life Use Cases**
+
+1. **Simplify complex queries** for reporting dashboards
+2. **Hide sensitive data**, e.g., show employee names but not salaries
+3. **Reusable query logic** for multiple reports
+4. **Aggregated views** – e.g., average salary per department
+
+---
+
+### ✅ Interview Tips
+
+1. Views **do not store data**, only **the query definition**
+2. Can be **used like a table** in SELECT statements
+3. Useful to **simplify queries, hide columns, and implement security**
+4. Common question:
+
+   * “Difference between a table and a view?” → View is virtual, table stores data
+   * “Can you update a view?” → Only if it references **a single table without joins or aggregates**
+
+---
+
