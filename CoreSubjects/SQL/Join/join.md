@@ -1006,3 +1006,186 @@ ORDER BY Salary DESC;
 ![alt text](image-12.png)
 
 ---
+
+Perfect! Let’s dive into **SQL Subqueries** in detail with **examples, real-life scenarios, and interview-oriented explanations**.
+
+---
+
+# SQL Subqueries
+
+A **Subquery** (or inner query) is a **query within another query**.
+
+* It is enclosed in **parentheses** `( )`
+* Can be used in **SELECT, FROM, WHERE, or HAVING** clauses
+* Helps to **filter, calculate, or compare data dynamically**
+
+---
+
+## 1. **Types of Subqueries**
+
+| Type                      | Description                                                         |
+| ------------------------- | ------------------------------------------------------------------- |
+| **Single-row subquery**   | Returns **one row**, often used with `=, <, >`                      |
+| **Multiple-row subquery** | Returns **multiple rows**, used with `IN, ANY, ALL`                 |
+| **Correlated subquery**   | Subquery depends on the **outer query**, evaluated for **each row** |
+| **Nested subquery**       | Subquery inside another subquery, can be multi-level                |
+
+---
+
+## 2. **Example Tables**
+
+### Employee Table
+
+| EmpID | Name         | DeptID | Salary |
+| ----- | ------------ | ------ | ------ |
+| 1     | Amit Sharma  | 1      | 55000  |
+| 2     | Riya Singh   | 2      | 48000  |
+| 3     | Vikram Patel | 1      | 60000  |
+| 4     | Sana Khan    | 2      | 45000  |
+| 5     | Karan Mehta  | 3      | 70000  |
+| 6     | Anita Roy    | 2      | 52000  |
+| 7     | Rahul Verma  | 1      | 53000  |
+| 8     | Priya Sharma | 3      | 65000  |
+
+### Department Table
+
+| DeptID | DepartmentName |
+| ------ | -------------- |
+| 1      | IT             |
+| 2      | HR             |
+| 3      | Finance        |
+
+---
+
+## 3. **Single-Row Subquery Example**
+
+**Goal:** Find employees earning **more than the average salary**
+
+```sql
+SELECT Name, Salary
+FROM Employee
+WHERE Salary > (SELECT AVG(Salary) FROM Employee);
+```
+
+**Result:**
+
+| Name         | Salary |
+| ------------ | ------ |
+| Vikram Patel | 60000  |
+| Karan Mehta  | 70000  |
+| Priya Sharma | 65000  |
+
+**Explanation:**
+
+* Inner query `(SELECT AVG(Salary) FROM Employee)` calculates average salary
+* Outer query selects employees **earning more than this average**
+
+---
+
+## 4. **Multiple-Row Subquery Example**
+
+**Goal:** Find employees in **IT or Finance department**
+
+```sql
+SELECT Name, DeptID
+FROM Employee
+WHERE DeptID IN (SELECT DeptID FROM Department WHERE DepartmentName IN ('IT','Finance'));
+```
+
+**Result:**
+
+| Name         | DeptID |
+| ------------ | ------ |
+| Amit Sharma  | 1      |
+| Vikram Patel | 1      |
+| Rahul Verma  | 1      |
+| Karan Mehta  | 3      |
+| Priya Sharma | 3      |
+
+**Explanation:**
+
+* Inner query returns DeptIDs of IT and Finance
+* Outer query selects employees in those departments
+
+---
+
+## 5. **Correlated Subquery Example**
+
+**Goal:** Find employees who **earn more than the average salary of their department**
+
+```sql
+SELECT e.Name, e.Salary, e.DeptID
+FROM Employee e
+WHERE e.Salary > (
+    SELECT AVG(Salary)
+    FROM Employee
+    WHERE DeptID = e.DeptID
+);
+```
+
+**Result:**
+
+| Name         | Salary | DeptID |
+| ------------ | ------ | ------ |
+| Vikram Patel | 60000  | 1      |
+| Karan Mehta  | 70000  | 3      |
+| Priya Sharma | 65000  | 3      |
+
+**Explanation:**
+
+* Subquery depends on `e.DeptID` from outer query
+* Checks **department-wise average** dynamically
+
+---
+
+## 6. **Nested Subquery Example**
+
+**Goal:** Find employees earning more than the **highest salary in HR**
+
+```sql
+SELECT Name, Salary
+FROM Employee
+WHERE Salary > (
+    SELECT MAX(Salary)
+    FROM Employee
+    WHERE DeptID = (
+        SELECT DeptID FROM Department WHERE DepartmentName='HR'
+    )
+);
+```
+
+**Result:**
+
+| Name         | Salary |
+| ------------ | ------ |
+| Vikram Patel | 60000  |
+| Karan Mehta  | 70000  |
+| Priya Sharma | 65000  |
+
+**Explanation:**
+
+* Inner-most query finds DeptID of HR
+* Middle query finds **highest salary in HR**
+* Outer query selects employees earning more than that
+
+---
+
+## 7. **Real-life Use Cases**
+
+1. Compare **employee salary with department average**
+2. Find **products priced above category average**
+3. Fetch **students scoring above class average**
+
+---
+
+### ✅ Interview Tips
+
+1. **Know difference between:**
+
+   * **Single-row vs multiple-row subquery**
+   * **Correlated vs non-correlated subquery**
+2. **Placement questions often combine subquery with aggregate functions**
+3. Subqueries can be used in **SELECT, WHERE, FROM, HAVING**
+
+---
+
