@@ -1,5 +1,4 @@
-Perfect! Let’s dive into the **`ORDER BY` clause in SQL** with **simple explanation, queries, real-life examples, and interview points**.
-
+![alt text](image-1.png)
 ---
 
 # SQL ORDER BY Clause
