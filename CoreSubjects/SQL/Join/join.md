@@ -737,3 +737,272 @@ WHERE e.Salary < m.Salary;
 ---
 
 ![alt text](image-11.png)
+
+---
+
+Perfect! Let’s discuss **UNION in SQL** in detail with **examples, real-life use cases, and interview insights**.
+
+---
+
+# SQL UNION
+
+The **`UNION`** operator is used to **combine the results of two or more SELECT queries into a single result set**.
+
+* **Duplicates are removed by default**.
+* Columns must have **same number and compatible data types** in all SELECT queries.
+* If you want to include duplicates, use **`UNION ALL`**.
+
+---
+
+## 1. **Syntax**
+
+```sql
+SELECT column1, column2, ...
+FROM table1
+WHERE condition
+
+UNION [ALL]
+
+SELECT column1, column2, ...
+FROM table2
+WHERE condition;
+```
+
+---
+
+## 2. **Example – Employee Departments**
+
+Assume we have **two tables** representing employees in **IT** and **HR**:
+
+### IT\_Employees
+
+| EmpID | Name         | DeptID |
+| ----- | ------------ | ------ |
+| 1     | Amit Sharma  | 1      |
+| 3     | Vikram Patel | 1      |
+| 7     | Rahul Verma  | 1      |
+
+### HR\_Employees
+
+| EmpID | Name       | DeptID |
+| ----- | ---------- | ------ |
+| 2     | Riya Singh | 2      |
+| 6     | Anita Roy  | 2      |
+| 9     | Neha Gupta | 2      |
+
+---
+
+### 3. **UNION Query**
+
+```sql
+SELECT Name, DeptID
+FROM IT_Employees
+
+UNION
+
+SELECT Name, DeptID
+FROM HR_Employees;
+```
+
+**Result:**
+
+| Name         | DeptID |
+| ------------ | ------ |
+| Amit Sharma  | 1      |
+| Vikram Patel | 1      |
+| Rahul Verma  | 1      |
+| Riya Singh   | 2      |
+| Anita Roy    | 2      |
+| Neha Gupta   | 2      |
+
+**Explanation:**
+
+* Combines **all employees** from IT and HR into a single list
+* Removes duplicates if any
+
+---
+
+### 4. **UNION ALL Query**
+
+```sql
+SELECT Name, DeptID
+FROM IT_Employees
+
+UNION ALL
+
+SELECT Name, DeptID
+FROM HR_Employees;
+```
+
+**Result:**
+
+* Includes all rows, **even duplicates** (if any)
+
+---
+
+## 5. **Important Points**
+
+1. **Number of columns must match** in all SELECTs
+2. **Data types must be compatible**
+3. **ORDER BY** can only be used **once at the end**:
+
+```sql
+SELECT Name, DeptID
+FROM IT_Employees
+UNION
+SELECT Name, DeptID
+FROM HR_Employees
+ORDER BY Name;
+```
+
+4. **UNION vs JOIN**:
+
+   * **JOIN** → combines **columns** from tables
+   * **UNION** → combines **rows** from multiple queries
+
+---
+
+## 6. **Real-life Use Cases**
+
+1. Combine employee lists from **different departments or offices**
+2. Combine **sales data from multiple regions**
+3. Merge **old and new data tables** for reporting
+
+---
+
+### ✅ Interview Tips
+
+1. Know **difference between UNION and UNION ALL**
+2. Remember **column count and data type compatibility**
+3. Can be combined with **ORDER BY, LIMIT, WHERE**
+4. Common question:
+
+   * “How to combine two tables into a single list without duplicates?” → Use `UNION`
+
+---
+
+Perfect! Let’s create a **complete, placement-ready example using `UNION` in SQL** with a **realistic scenario** and full explanation.
+
+---
+
+# SQL UNION – Full Example
+
+## 1. Example Tables
+
+We have two tables representing **employees from two offices**:
+
+### Office1\_Employees
+
+| EmpID | Name         | Department | Salary |
+| ----- | ------------ | ---------- | ------ |
+| 1     | Amit Sharma  | IT         | 55000  |
+| 2     | Riya Singh   | HR         | 48000  |
+| 3     | Vikram Patel | IT         | 60000  |
+| 4     | Sana Khan    | HR         | 45000  |
+
+### Office2\_Employees
+
+| EmpID | Name         | Department | Salary |
+| ----- | ------------ | ---------- | ------ |
+| 5     | Karan Mehta  | Finance    | 70000  |
+| 6     | Anita Roy    | HR         | 52000  |
+| 7     | Rahul Verma  | IT         | 53000  |
+| 8     | Priya Sharma | Finance    | 65000  |
+
+---
+
+## 2. Goal
+
+* Get a **combined list of all employees** from both offices
+* Show **Name, Department, Salary**
+* Sort by **Salary descending**
+* Include **all employees**, no duplicates
+
+---
+
+## 3. UNION Query
+
+```sql
+SELECT Name, Department, Salary
+FROM Office1_Employees
+
+UNION
+
+SELECT Name, Department, Salary
+FROM Office2_Employees
+ORDER BY Salary DESC;
+```
+
+**Result:**
+
+| Name         | Department | Salary |
+| ------------ | ---------- | ------ |
+| Karan Mehta  | Finance    | 70000  |
+| Priya Sharma | Finance    | 65000  |
+| Vikram Patel | IT         | 60000  |
+| Amit Sharma  | IT         | 55000  |
+| Rahul Verma  | IT         | 53000  |
+| Anita Roy    | HR         | 52000  |
+| Riya Singh   | HR         | 48000  |
+| Sana Khan    | HR         | 45000  |
+
+**Explanation:**
+
+* Combines employees from **both tables**
+* Removes duplicates automatically (if any)
+* Sorted by **Salary descending**
+
+---
+
+## 4. UNION ALL Query (Including Duplicates)
+
+```sql
+SELECT Name, Department, Salary
+FROM Office1_Employees
+
+UNION ALL
+
+SELECT Name, Department, Salary
+FROM Office2_Employees
+ORDER BY Salary DESC;
+```
+
+**Difference:**
+
+* Includes **all rows**, even if some employees exist in **both tables**
+
+---
+
+## 5. Real-life Use Case
+
+* Combine **employee lists from multiple branches**
+* Combine **current and archived data**
+* Combine **sales records from multiple regions**
+
+---
+
+## 6. Tips for Placement/Interview
+
+1. **UNION vs JOIN**:
+
+   * `JOIN` → combines **columns** from multiple tables
+   * `UNION` → combines **rows** from multiple queries
+
+2. **Column requirement**:
+
+   * Same number of columns in each SELECT
+   * Compatible data types
+
+3. **ORDER BY with UNION**:
+
+   * Only allowed **once at the end**
+
+4. **UNION ALL**:
+
+   * Use when duplicates are acceptable or important
+
+---
+
+![alt text](image-12.png)
+
+---
