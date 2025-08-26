@@ -209,3 +209,74 @@ SELECT Name, JoiningDate FROM Employee WHERE JoiningDate > '2023-01-01';
 
 ```
 
+Absolutely! Let’s create **one single SQL table example** that covers **all common SQL datatypes**: numeric, string, date/time, boolean, and large text. This will be **placement-ready** and easy to understand.
+
+---
+
+````markdown
+# SQL Datatypes - Single Example Table Covering All Types
+
+## 1. Create Table Example
+
+```sql
+CREATE TABLE Company (
+    CompanyID INT,               -- Numeric: Company unique ID
+    CompanyName VARCHAR(100),    -- String: Name of company
+    TotalEmployees BIGINT,       -- Numeric: Total number of employees
+    Revenue DECIMAL(15,2),       -- Numeric: Revenue with 2 decimal places
+    Rating FLOAT,                -- Numeric: Approximate rating
+    FoundedYear YEAR,            -- Year: Year of establishment
+    EstablishedDate DATE,        -- Date: Exact founding date
+    LastAudit DATETIME,          -- Datetime: Last audit timestamp
+    WorkingHours TIME,           -- Time: Office working hours
+    IsActive BOOLEAN,            -- Boolean: Is company active
+    Description TEXT             -- Text: Company description
+);
+````
+
+---
+
+## 2. Insert Data Example
+
+```sql
+INSERT INTO Company (CompanyID, CompanyName, TotalEmployees, Revenue, Rating, FoundedYear, EstablishedDate, LastAudit, WorkingHours, IsActive, Description)
+VALUES
+(1, 'Tech Solutions', 1200, 5500000.75, 4.5, 2005, '2005-03-15', '2025-08-26 10:30:00', '09:00:00', TRUE, 'Leading IT company specializing in software solutions.'),
+(2, 'Green Energy', 350, 1200000.50, 4.2, 2012, '2012-07-01', '2025-08-25 16:45:00', '10:00:00', FALSE, 'Company focused on renewable energy and sustainability projects.');
+```
+
+---
+
+## 3. Select Queries Example
+
+```sql
+-- Select all companies
+SELECT * FROM Company;
+
+-- Select active companies
+SELECT CompanyName, Revenue FROM Company WHERE IsActive = TRUE;
+
+-- Select companies founded after 2010
+SELECT CompanyName, FoundedYear FROM Company WHERE FoundedYear > 2010;
+
+-- Select companies with rating above 4.3
+SELECT CompanyName, Rating FROM Company WHERE Rating > 4.3;
+```
+
+---
+
+### ✅ Real-life Explanation
+
+* `CompanyID` → numeric, unique identifier
+* `CompanyName` → variable-length string for company name
+* `TotalEmployees` → large integer, because some companies have thousands of employees
+* `Revenue` → decimal, exact financial values
+* `Rating` → float, approximate numeric rating
+* `FoundedYear` → only year
+* `EstablishedDate` → exact date of foundation
+* `LastAudit` → datetime for last audit timestamp
+* `WorkingHours` → time only
+* `IsActive` → boolean to track active/inactive companies
+* `Description` → large text for company description
+
+---
