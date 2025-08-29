@@ -411,3 +411,257 @@ public class Main {
 
 ---
 
+Perfect! Let’s break it down in **simple language** with examples so it’s crystal clear.
+
+---
+
+# 🔹 What is Extending Interfaces?
+
+* In Java, **interfaces can extend other interfaces**.
+* This allows you to **build a hierarchy of interfaces**.
+* A child interface **inherits all the abstract methods** of its parent interface.
+* A class that implements the child interface **must implement all methods from both parent and child interfaces**.
+
+---
+
+## ✅ Syntax
+
+```java
+interface ParentInterface {
+    void parentMethod();
+}
+
+interface ChildInterface extends ParentInterface {
+    void childMethod();
+}
+
+class MyClass implements ChildInterface {
+    public void parentMethod() {
+        System.out.println("Parent method implemented");
+    }
+
+    public void childMethod() {
+        System.out.println("Child method implemented");
+    }
+}
+```
+
+---
+
+## ✅ Example with Car & Vehicle Concept
+
+### Engine.java
+
+```java
+package Interfaces;
+
+public interface Engine {
+    void start();
+    void stop();
+    void accelerate();
+}
+```
+
+### AdvancedEngine.java (extends Engine)
+
+```java
+package Interfaces;
+
+public interface AdvancedEngine extends Engine {
+    void turboBoost();
+}
+```
+
+### Car.java
+
+```java
+package Interfaces;
+
+public class Car implements AdvancedEngine {
+    @Override
+    public void start() {
+        System.out.println("Car starts");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Car stops");
+    }
+
+    @Override
+    public void accelerate() {
+        System.out.println("Car accelerates");
+    }
+
+    @Override
+    public void turboBoost() {
+        System.out.println("Turbo Boost activated!");
+    }
+}
+```
+
+### Main.java
+
+```java
+package Interfaces;
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.start();
+        car.accelerate();
+        car.turboBoost();
+        car.stop();
+    }
+}
+```
+
+---
+
+## ✅ Output
+
+```
+Car starts
+Car accelerates
+Turbo Boost activated!
+Car stops
+```
+
+---
+
+## 🔹 Key Points for Interview
+
+1. Interfaces **can extend multiple interfaces**:
+
+```java
+interface C extends A, B { }
+```
+
+2. **A class implementing a child interface must implement all methods** from all parent interfaces.
+
+3. **Interface inheritance = multiple inheritance allowed**, unlike classes.
+
+---
+
+Perfect! Let’s go **step by step** and keep it **super simple** with examples so you can use it for learning and interviews.
+
+---
+
+# 🌟 What are Annotations in Java?
+
+* Annotations are **metadata** (information about your code).
+* They **don’t change the execution** of your program by themselves.
+* Used to give **instructions to the compiler** or **tools/frameworks**.
+* Think of annotations as **special tags** in your code.
+
+---
+
+## 🔹 Types of Annotations
+
+### 1. **Built-in (Predefined) Annotations**
+
+| Annotation          | Description                                                           |
+| ------------------- | --------------------------------------------------------------------- |
+| `@Override`         | Checks that a method is actually overriding a method from superclass. |
+| `@Deprecated`       | Marks a method/class as outdated (compiler will warn if used).        |
+| `@SuppressWarnings` | Tells compiler to ignore specific warnings.                           |
+
+---
+
+### 2. **Custom Annotations**
+
+* You can **create your own annotation** using `@interface`.
+* Often used in frameworks like Spring, JUnit, etc.
+
+```java
+// Define a custom annotation
+@interface MyAnnotation {
+    String value();   // annotation element
+}
+```
+
+---
+
+## 🔹 Examples of Built-in Annotations
+
+### 1. `@Override`
+
+```java
+class Parent {
+    void show() {
+        System.out.println("Parent method");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    void show() {          // Must override correctly
+        System.out.println("Child method");
+    }
+}
+
+public class PracticeExample {
+    public static void main(String[] args) {
+        Child c = new Child();
+        c.show();
+    }
+}
+```
+
+✅ Output:
+
+```
+Child method
+```
+
+* If you mistype the method name, the compiler will **give an error**.
+
+---
+
+### 2. `@Deprecated`
+
+```java
+class OldClass {
+    @Deprecated
+    void oldMethod() {
+        System.out.println("This method is old");
+    }
+
+    void newMethod() {
+        System.out.println("This method is new");
+    }
+}
+
+public class PracticeExample {
+    public static void main(String[] args) {
+        OldClass obj = new OldClass();
+        obj.oldMethod();  // Compiler shows warning
+        obj.newMethod();
+    }
+}
+```
+
+---
+
+### 3. `@SuppressWarnings`
+
+```java
+@SuppressWarnings("unused")  // Ignore warnings for unused variables
+public class PracticeExample {
+    public static void main(String[] args) {
+        int x = 10;   // normally compiler would warn "unused variable"
+    }
+}
+```
+
+---
+
+## 🔹 Key Points
+
+1. Annotations = metadata about code.
+2. Built-in annotations help **compiler check** your code.
+3. Custom annotations are used in frameworks or for **documentation purposes**.
+4. They do **not directly affect runtime behavior** unless used by a framework/tool.
+
+---
+
