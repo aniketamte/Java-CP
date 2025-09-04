@@ -4,7 +4,6 @@ public class JobSequencingProblem {
             int deadline;
             int profit;
             int id;
-
             public Job(int i, int d, int p){
                   id = i;
                   deadline = d;
