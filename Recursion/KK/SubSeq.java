@@ -1,3 +1,4 @@
+import java.util.*;
 public class SubSeq {
     public static void subseq(String p, String up) {
         if (up.isEmpty()) {
@@ -8,7 +9,23 @@ public class SubSeq {
         subseq(p + ch, up.substring(1));
         subseq(p, up.substring(1));
     }
+
+    public static ArrayList<String> subseq2(String p, String up) {
+        if (up.isEmpty()) {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(p);
+            return list;
+        }
+        char ch = up.charAt(0);
+        ArrayList<String> left = subseq2(p + ch, up.substring(1));
+        ArrayList<String> right = subseq2(p, up.substring(1));
+
+        left.addAll(right);
+        return left;
+    }
+
     public static void main(String[] args) {
       subseq("", "abc");
+      System.out.println(subseq2("", "abc"));
     }
 }
