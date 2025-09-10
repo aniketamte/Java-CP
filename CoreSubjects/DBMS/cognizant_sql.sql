@@ -126,6 +126,122 @@ select * from employee;
 select * from employee_project;
 select * from project;
 
+select * from employee
+INNER JOIN project;
+
+select * from employee e
+LEFT JOIN project p
+ON e.DeptID = P.DeptID;
+
+select * from project p 
+RIGHT JOIN employee e
+ON e.DeptID = P.DeptID;
+
+-- Employee2 Table
+CREATE TABLE employee2 (
+    EmpID INT PRIMARY KEY,
+    EmpName VARCHAR(50),
+    Dept VARCHAR(50),
+    ProjectID INT
+);
+
+INSERT INTO employee2 VALUES
+(101, 'Amit', 'IT', 201),
+(102, 'Sneha', 'HR', NULL),
+(103, 'Rahul', 'IT', 202),
+(104, 'Priya', 'Finance', 203),
+(105, 'Vikram', 'IT', 204);
+
+-- Project2 Table
+CREATE TABLE project2 (
+    ProjectID INT PRIMARY KEY,
+    ProjectName VARCHAR(100),
+    Budget INT
+);
+
+INSERT INTO project2 VALUES
+(201, 'Payroll System', 500000),
+(202, 'Inventory App', 300000),
+(203, 'Banking System', 800000),
+(206, 'Mobile App', 200000);
+
+select * from employee2
+INNER JOIN project2;
+
+select * from employee2 e
+LEFT JOIN project2 p
+ON e.ProjectID = P.ProjectID;
+
+select EmpID, ProjectName, EmpName, Dept, Budget from project2 p 
+LEFT JOIN employee2 e
+ON e.ProjectID = P.ProjectID
+UNION
+select EmpID, ProjectName, EmpName, Dept, Budget from project2 p 
+RIGHT JOIN employee2 e
+ON e.ProjectID = P.ProjectID;
+
+CREATE TABLE employee3(
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    manager_id INT
+);
+
+INSERT INTO employee3 (id, name, manager_id)
+VALUES
+(101, "adam", 103),
+(102, "bob", 104),
+(103, "casey", NULL),
+(104, "donald", 103);
+
+SELECT a.name as Manager_Name, b.name 
+FROM employee3 as a 
+JOIN employee3 as b
+on a.id = b.manager_id;
+
+CREATE TABLE student (
+    rollno INT PRIMARY KEY,
+    name VARCHAR(50),
+    marks INT
+);
+
+INSERT INTO student (rollno, name, marks)
+VALUES
+(1, 'Amit', 85),
+(2, 'Sneha', 92),
+(3, 'Rahul', 76),
+(4, 'Priya', 64),
+(5, 'Vikram', 55);
+
+select * from student;
+
+CREATE TABLE student2 (
+    rollno INT PRIMARY KEY,
+    name VARCHAR(50),
+    marks INT,
+    grade CHAR(2),
+    city VARCHAR(50)
+);
+
+INSERT INTO student2 (rollno, name, marks, grade, city) VALUES
+(1, 'Amit', 85, 'A', 'Pune'),
+(2, 'Sneha', 92, 'A+', 'Mumbai'),
+(3, 'Rahul', 67, 'B', 'Delhi'),
+(4, 'Priya', 74, 'B+', 'Chennai'),
+(5, 'Vikram', 55, 'C', 'Kolkata');
+
+
+
+select name
+from student2
+where marks > (select AVG(marks) as Marks from student2);
+
+select rollno, name 
+from student2
+where rollno IN (
+	select rollno 
+    from student2 
+    where rollno % 2 = 0);
+
 -- 1. List all employees along with their department names and locations.
 select e.EmpID, e.EmpName, d.DeptName, d.Location
 from employee e 
@@ -313,16 +429,49 @@ ELSE Salary * 0.05
 END AS Bonus
 from employee;
 
+-- Sample Question from youtube
+select * 
+FROM employee
+where JoiningDate >= date_sub(curdate(), INTERVAL 2 MONTH)
+OR MONTH(JoiningDate) between 7 AND 9;
+
 -- 30. Create a view of employees with salary greater than 80,000.
 -- 31. Create a view for all employees in the IT department.
 -- 32. Create an index on Employee(Salary).
 -- 33. Compute the total budget allocated per department.
+
+SELECT d.DeptName, sum(p.Budget) AS TotalBudget
+FROM Project P
+JOIN Department d
+on p.DeptID = d.DeptID
+group by DeptName;
+
 -- 34. List employees not assigned to any project.
+
+SELECT e.EmpID, e.EmpName
+FROM employee e
+LEFT JOIN employee_Project ep ON e.EmpID = ep.EmpID
+WHERE ep.ProjectID IS NULL;
+
 -- 35. Count male and female employees in the company.
+select Gender, COUNT(*) AS Count 
+from employee
+group by Gender;
+
 -- 36. Find employees working on multiple projects.
 -- 37. Identify departments without any employees.
 -- 38. Find employees whose names end with ‘i’.
+
+SELECT EmpID, EmpName
+FROM employee
+WHERE EmpName LIKE '%i';
+
 -- 39. List employees who joined last year.
+
+SELECT EmpID, EmpName, JoiningDate
+FROM employee
+WHERE YEAR(JoiningDate) = 2021;
+
 -- 40. Calculate tenure in years for all employees.
 -- 41. Display the month name of each employee’s JoiningDate.
 -- 42. Find employees earning more than their department’s average salary.
