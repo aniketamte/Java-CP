@@ -245,4 +245,3 @@ In **FIFO**, more frames can result in more page faults!
 | Disk Scheduler | Manages I/O access           |
 
 ---
-
