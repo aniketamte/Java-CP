@@ -24,10 +24,17 @@ public class Leetcode1518 {
             return consumed;
       }
       
+      //Approach 3
+
+      public static int numWaterBottles3(int numBottles, int numExchange){
+            return numBottles + (numBottles - 1) / (numExchange-1);
+      }
+
       public static void main(String[] args) {
            int numBottles = 9;
            int numExchange = 3;
            System.out.println(numWaterBottles(numBottles, numExchange)); 
            System.out.println(numWaterBottles2(numBottles, numExchange));
+           System.out.println(numWaterBottles3(numBottles, numExchange));
       }
 }
