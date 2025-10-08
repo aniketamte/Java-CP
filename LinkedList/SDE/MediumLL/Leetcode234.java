@@ -24,6 +24,7 @@ public class Leetcode234 {
             temp.add(curr.val);
             curr = curr.next;
         }
+        
         int i = 0;
         int j = temp.size() - 1;
 
