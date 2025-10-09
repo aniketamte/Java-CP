@@ -13,7 +13,7 @@ public class Leetcide779 {
         }
     }
     public static void main(String[] args) {
-      int n = 2, k = 1;
+      int n = 3, k = 3;
       System.out.println(kthGrammar(n, k));
     }
 }
